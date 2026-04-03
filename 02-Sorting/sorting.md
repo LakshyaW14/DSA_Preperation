@@ -24,6 +24,7 @@ def Bubble_Sort(arr):
 
     # traverse all array elements
     for i in range(n):
+        # swapped flag for early exit
         swapped = False
 
         # last i elements are already in place
@@ -35,7 +36,7 @@ def Bubble_Sort(arr):
                 swapped = True
 
         # if no swaps happened, array is already sorted
-        if swapped == False:
+        if not swapped:
             break
 ```
 
@@ -112,4 +113,106 @@ def Bubble_Sort(arr):
 
 ---
 
-End of Notes ✅
+
+#  Selection Sort (concept + code + tc)
+
+## ✅ Code
+
+```python
+def Selection_Sort(arr):
+    n = len(arr)
+
+    for i in range(n - 1):
+
+        # assume current index has minimum
+        min_idx = i
+
+        # find actual minimum in unsorted portion
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+
+        # place minimum at correct position
+        if min_idx != i:
+            arr[i], arr[min_idx] = arr[min_idx], arr[i]
+```
+
+---
+
+# 🧠 Concept (Intuition)
+
+Selection Sort works by:
+
+1. Dividing the array into two parts:
+
+   * Sorted part (left)
+   * Unsorted part (right)
+
+2. For each position `i`:
+
+   * Find the **minimum element** in the unsorted portion
+   * Swap it with position `i`
+
+👉 After each pass, the smallest element is fixed in its correct position.
+
+---
+
+# 🔍 How It Progresses
+
+Example:
+
+```
+[5, 3, 4, 2, 1]
+```
+
+* Pass 1 → min = 1 → swap with index 0 → `[1, 3, 4, 2, 5]`
+* Pass 2 → min = 2 → swap with index 1 → `[1, 2, 4, 3, 5]`
+* Pass 3 → min = 3 → swap with index 2 → `[1, 2, 3, 4, 5]`
+
+---
+
+# ⏱️ Time Complexity (TC)
+
+| Case    | Time Complexity |
+| ------- | --------------- |
+| Best    | O(n²)           |
+| Average | O(n²)           |
+| Worst   | O(n²)           |
+
+### 📌 Why?
+
+* Outer loop runs `n` times
+* Inner loop scans remaining elements
+* Total comparisons ≈ `n(n-1)/2`
+
+👉 Always quadratic, no early exit optimization
+
+---
+
+# 📦 Space Complexity
+
+* **O(1)** (in-place sorting)
+
+---
+
+# ⚡ Key Properties
+
+* In-place ✅
+* Not stable ❌
+* Not adaptive ❌
+* Minimum swaps (≤ n-1) ✅
+
+---
+
+# 🎯 Important Insight
+
+* Comparisons → **O(n²)**
+* Swaps → **O(n)**
+
+👉 Useful when **swapping is costly but comparisons are cheap**
+
+---
+
+# 🚀 One-Line Summary
+
+> Repeatedly select the minimum element from the unsorted part and place it at the correct position.
