@@ -111,10 +111,10 @@ def Bubble_Sort(arr):
 
 > In each pass, the largest unsorted element "bubbles" to its correct position.
 
----
+--
 
 
-#  Selection Sort (concept + code + tc)
+# 🔹2. Selection Sort (concept + code + tc)
 
 ## ✅ Code
 
@@ -216,3 +216,115 @@ Example:
 # 🚀 One-Line Summary
 
 > Repeatedly select the minimum element from the unsorted part and place it at the correct position.
+
+--
+
+# 🔹3. Insertion Sort (Concept + Time Complexity)
+
+---
+
+# 🧠 Concept (Intuition)
+
+Insertion Sort works the way you sort **playing cards in your hand**.
+
+👉 You take one element at a time and insert it into its **correct position** in the already sorted part of the array.
+
+---
+
+# 🔍 How It Works
+
+* Divide the array into two parts:
+
+  * Left → **Sorted**
+  * Right → **Unsorted**
+
+* Start from the second element
+
+* Pick the current element (**key**)
+
+* Compare it with elements on the left
+
+* **Shift** larger elements to the right
+
+* Insert the key at the correct position
+
+---
+
+# 📊 Example
+
+```
+[5, 3, 4, 2]
+```
+
+* Step 1: Insert 3 → `[3, 5, 4, 2]`
+* Step 2: Insert 4 → `[3, 4, 5, 2]`
+* Step 3: Insert 2 → `[2, 3, 4, 5]`
+
+---
+
+# ⚡ Key Idea
+
+> Instead of swapping repeatedly, Insertion Sort **shifts elements** and inserts once.
+
+---
+
+# ⏱️ Time Complexity (TC)
+
+| Case    | Time Complexity |
+| ------- | --------------- |
+| Best    | O(n)            |
+| Average | O(n²)           |
+| Worst   | O(n²)           |
+
+---
+
+## 📌 Why?
+
+### Best Case (Already Sorted)
+
+* No shifting required
+* Only one comparison per element
+  👉 **O(n)**
+
+### Worst Case (Reverse Sorted)
+
+* Every element shifts completely
+  👉 Total operations:
+
+```
+1 + 2 + 3 + ... + n = O(n²)
+```
+
+---
+
+# 📦 Space Complexity
+
+* **O(1)** (in-place sorting)
+
+---
+
+# ⚡ Key Properties
+
+* Stable ✅
+* Adaptive ✅ (fast for nearly sorted arrays)
+* In-place ✅
+
+---
+
+# 🚀 When to Use
+
+* Small datasets
+* Nearly sorted arrays
+
+---
+
+# ❌ When NOT to Use
+
+* Large datasets
+* Completely unsorted arrays
+
+---
+
+# 🎯 One-Line Summary
+
+> Pick an element, shift larger elements to the right, and insert it into its correct position.
