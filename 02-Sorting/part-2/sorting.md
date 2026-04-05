@@ -1,0 +1,176 @@
+
+
+---
+
+#  03-Merge Sort
+
+## Concept
+
+Merge Sort is a **Divide and Conquer algorithm** that breaks a problem into smaller subproblems, solves them independently, and then combines the results.
+
+It divides the array into halves until each subarray has only one element, then merges them back in sorted order.
+
+---
+
+## Intuition
+
+> “Break the array until it cannot be broken further, then rebuild it in sorted order.”
+
+- A single element is always sorted.
+- So instead of sorting directly, we:
+  1. Divide the array
+  2. Sort smaller parts
+  3. Merge them
+
+👉 Key Insight:
+- **Splitting does NOT sort**
+- **Sorting happens during merging**
+
+---
+
+## Algorithm Steps
+
+1. If array size ≤ 1 → return (already sorted)
+2. Find middle index
+3. Recursively sort left half
+4. Recursively sort right half
+5. Merge both sorted halves
+
+---
+
+## Code (Python)
+
+```python
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+
+    return merge(left, right)
+
+
+def merge(left, right):
+    result = []
+    i = j = 0
+
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+
+    result.extend(left[i:])
+    result.extend(right[j:])
+
+    return result
+````
+
+---
+
+## Dry Run
+
+Input:
+
+```
+[38, 27, 43, 3]
+```
+
+### Divide:
+
+```
+[38, 27, 43, 3]
+→ [38, 27] [43, 3]
+→ [38] [27] [43] [3]
+```
+
+### Merge:
+
+```
+[38] + [27] → [27, 38]
+[43] + [3]  → [3, 43]
+```
+
+### Final Merge:
+
+```
+[27, 38] + [3, 43]
+→ [3, 27, 38, 43]
+```
+
+---
+
+## Time Complexity
+
+| Case         | Complexity |
+| ------------ | ---------- |
+| Best Case    | O(n log n) |
+| Average Case | O(n log n) |
+| Worst Case   | O(n log n) |
+
+### Reason:
+
+* Splitting → log n levels
+* Merging → n work at each level
+
+👉 Total = **O(n log n)**
+
+---
+
+## Space Complexity
+
+```
+O(n) + O(log n)
+```
+
+* O(n) → temporary arrays during merge
+* O(log n) → recursion stack
+
+---
+
+## Key Points
+
+✔ Stable sorting algorithm
+✔ Uses Divide & Conquer
+✔ Works well for large datasets
+✔ Predictable performance (no worst-case degradation)
+❌ Not in-place (uses extra memory)
+
+---
+
+## Interview Questions
+
+### Basic
+
+* What is Merge Sort?
+* Why is it called Divide and Conquer?
+* Why is its time complexity always O(n log n)?
+
+---
+
+### Intermediate
+
+* Why is Merge Sort stable?
+* Why does it require extra space?
+* Compare Merge Sort vs Quick Sort
+
+---
+
+### Advanced
+
+* Can Merge Sort be implemented in-place?
+* How does Merge Sort work on Linked Lists?
+* Write iterative (bottom-up) Merge Sort
+
+---
+
+## Final Summary
+
+> Merge Sort divides the array into smaller parts and merges them back in sorted order using recursion.
+
+```
+```
