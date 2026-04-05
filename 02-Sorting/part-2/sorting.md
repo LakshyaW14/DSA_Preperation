@@ -2,7 +2,7 @@
 
 ---
 
-#  03-Merge Sort
+# 03- Merge Sort
 
 ## Concept
 
