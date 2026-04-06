@@ -172,5 +172,160 @@ O(n) + O(log n)
 
 > Merge Sort divides the array into smaller parts and merges them back in sorted order using recursion.
 
+
+---
+#  05 - Quick Sort — Concept + Intuition
+
+**Quick Sort** is a **divide-and-conquer** sorting algorithm.
+
+Instead of splitting the array into equal halves (like Merge Sort), it:
+
+1. Picks a **pivot element**
+2. Partitions the array into:
+
+   * Elements **less than pivot**
+   * Elements **greater than pivot**
+3. Recursively applies the same process on both sides
+
+---
+
+### 🧠 Core Idea
+
+> “Put the pivot in its correct sorted position, then sort left and right parts.”
+
+---
+
+### ⚙️ Working Steps
+
+Given array:
+
 ```
+[8, 3, 1, 7, 0, 10, 2]
 ```
+
+Pick pivot (usually last element → `2`)
+
+After partition:
+
+```
+[1, 0, 2, 7, 3, 10, 8]
+        ↑
+     pivot fixed
+```
+
+Now:
+
+* Left: `[1, 0]`
+* Right: `[7, 3, 10, 8]`
+
+Repeat recursively.
+
+---
+
+### 🔁 Algorithm (Python Code)
+
+```python
+def partition(arr, low, high):
+    pivot = arr[high]  # choose last element as pivot
+    i = low - 1        # pointer for smaller element
+
+    for j in range(low, high):
+        if arr[j] < pivot:
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]
+
+    # place pivot at correct position
+    arr[i + 1], arr[high] = arr[high], arr[i + 1]
+    return i + 1
+
+
+def quick_sort(arr, low, high):
+    if low < high:
+        pi = partition(arr, low, high)
+
+        quick_sort(arr, low, pi - 1)   # left
+        quick_sort(arr, pi + 1, high)  # right
+```
+
+---
+
+### 🧪 Dry Run (Short)
+
+Array:
+
+```
+[4, 2, 6, 1, 3]
+```
+
+Pivot = 3
+After partition:
+
+```
+[2, 1, 3, 6, 4]
+        ↑
+```
+
+Then recursively:
+
+* Left → `[2,1] → [1,2]`
+* Right → `[6,4] → [4,6]`
+
+Final:
+
+```
+[1,2,3,4,6]
+```
+
+---
+
+### ⏱️ Time Complexity (Important)
+
+| Case       | Time Complexity |
+| ---------- | --------------- |
+| Best Case  | **O(n log n)**  |
+| Average    | **O(n log n)**  |
+| Worst Case | **O(n²)**       |
+
+👉 Worst case happens when:
+
+* Array is already sorted
+* Pivot is always smallest/largest
+
+---
+
+### 💾 Space Complexity
+
+* **O(log n)** → due to recursion stack (best/average)
+* **O(n)** → worst case recursion depth
+
+---
+
+### ⚡ Why Quick Sort is Fast in Practice?
+
+* In-place sorting (no extra array like Merge Sort)
+* Better cache performance
+* Used in real systems (with optimizations like random pivot)
+
+---
+
+### ⚖️ Quick Sort vs Merge Sort (Quick Insight)
+
+| Feature       | Quick Sort | Merge Sort  |
+| ------------- | ---------- | ----------- |
+| Space         | In-place   | Extra space |
+| Stability     | ❌ No       | ✅ Yes       |
+| Worst Case    | O(n²)      | O(n log n)  |
+| Practical Use | 🔥 Faster  | Reliable    |
+
+---
+
+### 💡 Key Interview Points
+
+* Pivot selection matters (random / median improves performance)
+* Not stable
+* Tail recursion optimization possible
+* Used in libraries (hybrid versions)
+
+---
+
+
