@@ -26,3 +26,10 @@ rotate 2 steps to the right: [6, 7, 1, 2, 3, 4, 5]
 ### Approach 
 * Brute Force approach - use additional temp var to store the k elements 
 * Optimal Approach - in place modification
+
+## 04 - Move zeroes to the end of the array 
+Problem Statement: You are given an array of integers, your task is to move all the zeros in the array to the end of the array and move non-negative integers to the front by maintaining their order.
+
+Examples
+Input: 1 ,0 ,2 ,3 ,0 ,4 ,0 ,1
+Output: 1 ,2 ,3 ,4 ,1 ,0 ,0 ,0
