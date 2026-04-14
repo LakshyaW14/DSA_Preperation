@@ -13,3 +13,16 @@ If there are k elements after removing the duplicates, then the first k elements
 We need to find whether the given integer array nums could represent a sorted array that has been rotated some number of times. A sorted array is defined as one arranged in non-decreasing order, meaning each element is less than or equal to the next. A rotation involves shifting a contiguous block of elements to the back of the array, preserving the relative order of all elements.
 
 * For example, [3, 4, 5, 1, 2] is a rotated version of the sorted array [1, 2, 3, 4, 5]. On the other hand, [3, 4, 2, 1, 5] is not a valid rotation of any sorted array because the order of elements is not preserved.
+
+## 03 - Rotate the array with k elements 
+Problem Statement: Given an array of integers, rotating array of elements by k elements either left or right.
+
+Examples
+Input : nums = [1, 2, 3, 4, 5, 6, 7], k = 2, right
+Output : [6, 7, 1, 2, 3, 4, 5]
+Explanation : rotate 1 step to the right: [7, 1, 2, 3, 4, 5, 6]
+rotate 2 steps to the right: [6, 7, 1, 2, 3, 4, 5] 
+
+### Approach 
+* Brute Force approach - use additional temp var to store the k elements 
+* Optimal Approach - in place modification
