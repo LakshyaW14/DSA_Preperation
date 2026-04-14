@@ -14,5 +14,5 @@ def Is_Arr_Sorted(arr):
         #if arr[i] > arr[(i+1) %n]
     return True if count <= 1 else False
 
-arr=[2,1,3,4]
+arr=[3,4,5,1,2]
 print(Is_Arr_Sorted(arr))
