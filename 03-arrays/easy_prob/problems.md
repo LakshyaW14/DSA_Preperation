@@ -14,6 +14,8 @@ We need to find whether the given integer array nums could represent a sorted ar
 
 * For example, [3, 4, 5, 1, 2] is a rotated version of the sorted array [1, 2, 3, 4, 5]. On the other hand, [3, 4, 2, 1, 5] is not a valid rotation of any sorted array because the order of elements is not preserved.
 
+---
+
 ## 03 - Rotate the array with k elements 
 Problem Statement: Given an array of integers, rotating array of elements by k elements either left or right.
 
@@ -27,7 +29,20 @@ rotate 2 steps to the right: [6, 7, 1, 2, 3, 4, 5]
 * Brute Force approach - use additional temp var to store the k elements 
 * Optimal Approach - in place modification
 
-## 04 - Move zeroes to the end of the array 
+---
+
+## 04 - find the largest element in the array 
+Problem Statement: Given an array, we have to find the largest element in the array.
+
+### Approach
+* Brute Force Approach - sort the array, return last element
+* Optimal Approach - var max, iterate -> compare -> update -> return
+
+---
+
+## 05 - 
+
+##  - Move zeroes to the end of the array 
 Problem Statement: You are given an array of integers, your task is to move all the zeros in the array to the end of the array and move non-negative integers to the front by maintaining their order.
 
 Examples
