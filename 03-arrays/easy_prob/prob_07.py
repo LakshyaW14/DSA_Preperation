@@ -66,6 +66,51 @@ def Union(arr1, arr2):
 # {If Space of Union ArrayList is considered} O(1) {If Space of union ArrayList is not considered}
 
 
+# ----------------------------------------------------------
+
+# appraoch 1 -> using Set 
+
+def FindUnion(arr1, arr2):
+    # Create a set with elements of both array
+    st = set(arr1) | set(arr2)
+
+    # return sorted list 
+    # py set() function worked as unordered_set, we need to sort it out 
+
+    return sorted(st)
+
+# TC O((m+n)log(m+n)) inserting an element into set takes log(n) time, if inserting m+n element\
+# it takes log(m+n) time. adding all elements in worst case so (m+n)log(m+n)
+
+# Using HashSet also takes the same time, On average insertion in unordered_set takes O(1) time but sorting the union vector takes O((m+n)log(m+n))  time.\
+#  Because at max union vector can have m+n elements.
+
+# SC O(m+n) {If Space of Union ArrayList is considered} ,O(1) {If Space of union ArrayList is not considered}
+
+#--------------------------------------------------------------------------
+
+
+# Approach 2 -> using map 
+
+def FindUnion_2(arr1, arr2):
+    # create a dictionary to store the frequency
+    freq = {}
+
+    for num in arr1:
+        freq[num] = freq.get(num,0) +1
+    for num in arr2:
+        freq[num] = freq.get(num,0) +1
+    union = sorted(freq.keys())
+
+    return union
+
+# Time Compleixty : O( (m+n)log(m+n) ) . Inserting a key in map takes logN times, where N is no of elements in map.\
+#  At max map can store m+n elements, Using HashMap also takes the same time, 
+
+#Space Complexity : O(m+n) {If Space of Union ArrayList is considered} ,O(1) {If Space of union ArrayList is not considered}
+
+#----------------------------------------------------------------------------------
+
 arr1 = [1,2,3,4,5] 
 arr2 = [2,3,4,4,5]
-print(Union(arr1,arr2))
+print(FindUnion_2(arr1,arr2))
