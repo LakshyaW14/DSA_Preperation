@@ -40,7 +40,37 @@ Problem Statement: Given an array, we have to find the largest element in the ar
 
 ---
 
-## 05 - 
+## 05 - Find Second Smallest and Second Largest Element in an array
+
+Problem Statement: Given an array, find the second smallest and second largest element in the array. Print ‘-1’ in the event that either of them doesn’t exist.
+
+Example 1:
+Input:
+ [1, 2, 4, 7, 7, 5]  
+Output:
+  
+Second Smallest : 2  
+Second Largest : 5  
+
+---
+
+## 06 - linear search
+
+Problem Statement: Given an array, and an element num the task is to find if num is present in the given array or not. If present print the index of the element or print -1.
+
+---
+
+## 07 - Union of Two Sorted Array 
+Problem Statement: Given two sorted arrays, arr1, and arr2 of size n and m. Find the union of two sorted arrays.
+
+The union of two arrays can be defined as the common and distinct elements in the two arrays.
+
+NOTE: Elements in the union should be in ascending order.
+* optimal approach -> Two pointers 
+* approach 1 -> Using Set
+* approach 2 -> Using Map 
+
+---
 
 ##  - Move zeroes to the end of the array 
 Problem Statement: You are given an array of integers, your task is to move all the zeros in the array to the end of the array and move non-negative integers to the front by maintaining their order.

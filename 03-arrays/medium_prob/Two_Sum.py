@@ -91,7 +91,8 @@ def Two_Sum_Optimal(arr,target):
 # Space Complexity: O(N) because we store the array elements along with their original indices in a separate list or vector for sorting, \
 # maintaining original positions.
 
-arr =[2,6,5,8,13]
+arr1 =[2,6,5,8,13]
 target=11
 
-print(Two_Sum_Optimal(arr,target))
+# print(Two_Sum_Optimal(arr,target))
+
