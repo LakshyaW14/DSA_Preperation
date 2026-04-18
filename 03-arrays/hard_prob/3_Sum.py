@@ -59,6 +59,51 @@ def Three_sum_2(nums):
 
 
 #-------------------------------------------------------------
+# optimal Approach 
+
+def Three_Sum_3(nums):
+    # Sort the array 
+    nums.sort()
+
+    # Store the final Result 
+    res =[]
+
+    # First loop for first element 
+    for i in range (len(nums)):
+        # Skip duplicates for first element
+        if i > 0 and nums[i] == nums[i-1]:
+            continue
+
+        # Two pointers 
+        left , right = i+1, len(nums)-1
+
+        # Find pairs for nums[i]
+        while left < right :
+            total = nums[i] + nums[left] + nums[right]
+
+            if total == 0:
+                res.append([nums[i], nums[left], nums[right]])
+                left +=1
+                right -=1
+
+                # Skip duplicates for left 
+                while left < right and  nums[left] == nums[left -1]:
+                    left +=1
+                while left < right and nums[right] == nums[right +1]:
+                    right -=1
+            elif total < 0:
+                left +=1
+            else:
+                right -=1
+    return res 
+    
+
+# Time Complexity: O(NlogN)+O(N2), as The pointer i, is running for approximately N times. And both the pointers j and k combined \
+#     can run for approximately N times including the operation of skipping duplicates. So the total time complexity will be O(N2). 
+
+# Space Complexity: O(no. of quadruplets), This space is only used to store the answer.\
+#       We are not using any extra space to solve this problem. So, from that perspective, space complexity can be written as O(1).
+
 
 nums = [-1,0,1,2,-1,-4]
-print(Three_sum_2(nums))
+print(Three_Sum_3(nums))
