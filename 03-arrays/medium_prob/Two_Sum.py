@@ -76,7 +76,8 @@ def Two_Sum_Optimal(arr,target):
 
         if Sum == target:
             # return "Yes"
-            return nums_with_index[left] [1], nums_with_index[right] [1]
+            return nums_with_index[left] [1], nums_with_index[right] [1] # the enumerate list are in [ (2,0), (6,1), (5,2), ......] in format 
+        # for accessing num [0] , and for idx [1]
         
         elif Sum < target:
             left +=1
@@ -91,8 +92,8 @@ def Two_Sum_Optimal(arr,target):
 # Space Complexity: O(N) because we store the array elements along with their original indices in a separate list or vector for sorting, \
 # maintaining original positions.
 
-arr1 =[2,6,5,8,13]
+arr =[2,6,5,8,13]
 target=11
 
-# print(Two_Sum_Optimal(arr,target))
+print(Two_Sum_Optimal(arr,target))
 
