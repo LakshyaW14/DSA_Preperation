@@ -72,9 +72,32 @@ NOTE: Elements in the union should be in ascending order.
 
 ---
 
-##  - Move zeroes to the end of the array 
+## 08 Count Max Consecutive Ones's in the array 
+Problem Statement: Given an array that contains only 1 and 0 return the count of maximum consecutive ones in the array..
+
+Examples
+Example 1:
+Input: prices = {1, 1, 0, 1, 1, 1}
+Output: 3
+Explanation: There are two consecutive 1’s and three consecutive 1’s in the array out of which maximum is 3.
+
+---
+
+## 09 - Move zeroes to the end of the array 
 Problem Statement: You are given an array of integers, your task is to move all the zeros in the array to the end of the array and move non-negative integers to the front by maintaining their order.
 
 Examples
 Input: 1 ,0 ,2 ,3 ,0 ,4 ,0 ,1
 Output: 1 ,2 ,3 ,4 ,1 ,0 ,0 ,0
+
+---
+
+## 10 - Find the number that appears once, and the other numbers twice
+
+
+Problem Statement: Given a non-empty array of integers arr, every element appears twice except for one. Find that single one.
+
+Example 1:
+Input Format: arr[] = {2,2,1}
+Result: 1
+Explanation: In this array, only the element 1 appear once and so it is the answer.
