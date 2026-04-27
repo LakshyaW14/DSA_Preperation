@@ -74,4 +74,4 @@ print(getElements(arr))
 
 
 
-# Optimal approach 
+
