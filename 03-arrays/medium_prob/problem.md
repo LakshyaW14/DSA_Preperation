@@ -19,4 +19,19 @@ Input: nums = [1, 0, 2, 1, 0]
 Output: [0, 0, 1, 1, 2]
 Explanation: The nums array in sorted order has 2 zeroes, 2 ones and 1 two
 
-# 03 - > Rotate Matrix
+
+## 03 -> Find the Majority Element that occurs more than N/2 times
+
+Problem Statement: Given an integer array nums of size n, return the majority element of the array.
+
+The majority element of an array is an element that appears more than n/2 times in the array. The array is guaranteed to have a majority element.
+
+Example 1:
+Input:
+ nums = [7, 0, 0, 1, 7, 7, 2, 7, 7]  
+Output:
+ 7  
+Explanation:
+ The number 7 appears 5 times in the 9-sized array, making it the most frequent element.
+
+# 0 - > Rotate Matrix
