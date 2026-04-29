@@ -1,4 +1,22 @@
+
+
 # Union of Two Sorted Array 
+# Brute Force Approach 
+
+def Union (arr1, arr2):
+    st =set()
+    for num in arr1:
+        st.add(num)
+    for num in arr2:
+        st.add(num)
+    Union = []
+    for num in st:
+        Union.append(num)
+    return Union    
+    
+    # Tc -> O(n1 logn ) + O(n2 logn ) + O(n1 +n2)
+    # SC -> O(n1 +n2 )
+#-------------------------------------------------------------------------------------
 
 # Optimal Approach ( Two Pointers )
 #  Since arrays are already sorted, we merge like merge-sort and skip duplicates.
@@ -113,4 +131,4 @@ def FindUnion_2(arr1, arr2):
 
 arr1 = [1,2,3,4,5] 
 arr2 = [2,3,4,4,5]
-print(FindUnion_2(arr1,arr2))
+print(Union(arr1,arr2))
