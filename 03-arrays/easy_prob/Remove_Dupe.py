@@ -5,7 +5,7 @@
 # optimal approach
 # functions to remove the duplicates from sorted array in place 
 
-# two pointers approach
+"""two pointers approach """
 
 def remove_duplicate(arr):
     # list is empty , return 0
@@ -54,7 +54,7 @@ def remove_duplicates_set (arr):
             i +=1
     return i
 
-# Time Complexity: O(N), We traverse the entire array and insert elements into set.
+# Time Complexity: O(N + logn), We traverse the entire array and insert elements into set.
 # Space Complexity: O(N), additional space used to store elements in set.
 
 #----------------------------------------------------------------
