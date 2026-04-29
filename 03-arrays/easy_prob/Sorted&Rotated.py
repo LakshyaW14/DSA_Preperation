@@ -12,7 +12,10 @@ def Is_Arr_Sorted(arr):
 
         # optimization 
         #if arr[i] > arr[(i+1) %n]
-    return True if count <= 1 else False
+    return count <= 1 
 
 arr=[3,4,5,1,2]
 print(Is_Arr_Sorted(arr))
+
+# Time Complexity (TC): O(n)
+# Space Complexity (SC): O(1)
