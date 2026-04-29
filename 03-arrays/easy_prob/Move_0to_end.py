@@ -1,5 +1,5 @@
 # Move all Zeros to the end of the array
-
+# Brute Force Approach 
 def move_Zero_to_end (nums):
 
     temp =[0] * len(nums)
@@ -22,12 +22,14 @@ def move_Zero_to_end (nums):
     # or just return Temp, if don't want to modify the original array 
 
 
-# Time Complexity: O(N), we can move all zeroes to end in linear time.
+# Time Complexity: O(n) + O(k) + O(n-k) = O(N), 
+# we can move all zeroes to end in linear time.
 # Space Complexity: O(N), additional space used for temporary array.
 
 #-------------------------------------------------------
 
-# Optimal Approach ( Two Pointers )
+# Optimal Approach 
+""" Two Pointers Approach """
 def Move_Zeros_(nums):
     # Pointer to first zero 
     j = -1
@@ -53,8 +55,9 @@ def Move_Zeros_(nums):
             j+=1
     return nums
 
-# Time Complexity: O(N), we can move all zeroes to end in linear time.
-# Space Complexity: O(1), constant additional space is used.
+# Time Complexity: O(k) + O(N-k) = O(N),
+#  we can move all zeroes to end in linear time.
+# Space Complexity: O(1), constant, no additional space is used.
 
 
 
