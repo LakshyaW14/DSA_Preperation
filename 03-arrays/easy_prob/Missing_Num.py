@@ -77,16 +77,25 @@ def Missing_Optimal_Sum (nums):
 def Missing_optimal_XOR (nums):
     xor1, xor2=0,0
     n =len(nums) +1
+
+    # Xor -> 1^2^3^4^5
     # for i in range (1, n+1 ):
     #     xor1 ^= i
     #O(n^2) need to solve in one iteration 
 
+    # xor original array elements 
     for j in range ( n-1):
         xor1 ^= (j+1)
         xor2 ^= nums[j]
     xor1 ^= n
     
     return xor1 ^ xor2
+
+
+# TC O(N)
+# SC O(1)
+
+#------------------------------------------
 
 nums = [2,1,5,4]
 print(Missing_optimal_XOR (nums))
