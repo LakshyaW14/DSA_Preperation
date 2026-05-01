@@ -12,7 +12,7 @@ Problem Statement: Given an array of N integers, your task is to find unique qua
 
 Note: a, b, c and d are also distinct and lies between 0 to n-1 (both inclusive).
 
-## 03 -> Majority Elements(&gt;N/3 times) | Find the elements that appears more than N/3 times in the array
+## 03 -> Majority Elements -2 (&gt;N/3 times) | Find the elements that appears more than N/3 times in the array
 
 
 Problem Statement: Given an integer array nums of size n. Return all elements which appear more than n/3 times in the array. The output can be returned in any order.
@@ -56,3 +56,21 @@ First n rows of Pascal’s triangle:
 1 3 3 1 
 1 4 6 4 1  
 Explanation: Pascal triangle for first 5 rows is shown above.
+
+---
+
+## 06 -> Count inversions in an array
+
+
+Problem Statement: Given an array of N integers, count the inversion of the array (using merge-sort).
+
+Inversion of an array: for all i & j < size of array, if i < j then you have to find pair (A[i],A[j]) such that A[j] < A[i].
+
+Examples
+Example 1:
+Input Format: N = 5, array[] = {1,2,3,4,5}
+Result: 0
+Explanation: we have a sorted array and the sorted array has 0 inversions as for i < j you will never find a pair such that A[j] < A[i]. More clear example: 2 has index 1 and 5 has index 4 now 1 < 5 but 2 < 5 so this is not an inversion.
+
+---
+
