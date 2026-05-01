@@ -101,3 +101,56 @@ Example 1:
 Input Format: arr[] = {2,2,1}
 Result: 1
 Explanation: In this array, only the element 1 appear once and so it is the answer.
+
+---
+
+## 11 - Find the Missing number 
+
+Given an array arr[] of size n-1 with distinct integers in the range of [1, n]. This array represents a permutation of the integers from 1 to n with one element missing. Find the missing element in the array.
+
+Examples: 
+
+Input: arr[] = [8, 2, 4, 5, 3, 7, 1]
+Output: 6
+Explanation: All the numbers from 1 to 8 are present except 6.
+
+Input: arr[] = [1, 2, 3, 5]
+Output: 4
+Explanation: Here the size of the array is 4, so the range will be [1, 5]. The missing number between 1 to 5 is 4
+
+---
+
+## 12 - Longest Subarray with given Sum K(Positives)
+
+
+Problem Statement: Given an array nums of size n and an integer k, find the length of the longest sub-array that sums to k. If no such sub-array exists, return 0.
+
+Examples
+Example 1:
+Input:
+ nums = [10, 5, 2, 7, 1, 9], k = 15  
+Output:
+ 4  
+Explanation:
+ The longest sub-array with a sum equal to 15 is [5, 2, 7, 1], which has a length of 4. This sub-array starts at index 1 and ends at index 4, and the sum of its elements (5 + 2 + 7 + 1) equals 15. Therefore, the length of this sub-array is 4.
+
+---
+
+## 13 - Length of the longest subarray with zero Sum
+
+Problem Statement: Given an array containing both positive and negative integers, we have to find the length of the longest subarray with the sum of all elements equal to zero.
+
+Examples
+Example 1:
+Input:
+ N = 6, array[] = {9, -3, 3, -1, 6, -5}  
+Result:
+ 5  
+Explanation:
+ The following subarrays sum to zero:
+- {-3, 3}
+- {-1, 6, -5}
+- {-3, 3, -1, 6, -5}
+The length of the longest subarray with sum zero is 5.
+
+---
