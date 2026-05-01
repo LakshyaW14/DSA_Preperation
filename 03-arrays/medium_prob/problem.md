@@ -34,4 +34,37 @@ Output:
 Explanation:
  The number 7 appears 5 times in the 9-sized array, making it the most frequent element.
 
-# 0 - > Rotate Matrix
+---
+
+# 04 - > Kadane's Algorithm : Maximum Subarray Sum in an Array
+
+Problem Statement: Given an integer array nums, find the subarray with the largest sum and return the sum of the elements present in that subarray.
+
+A subarray is a contiguous non-empty sequence of elements within an array.
+
+Examples
+Example 1:
+Input:
+ nums = [2, 3, 5, -2, 7, -4]  
+Output:
+ 15  
+Explanation:
+ The subarray from index 0 to index 4 has the largest sum = 15, which is the maximum sum of any contiguous subarray.
+
+---
+
+# 05 -> Stock Buy And Sell
+
+Problem Statement: You are given an array of prices where prices[i] is the price of a given stock on an ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+
+Examples
+Input: prices = [7,1,5,3,6,4]
+Output: 5
+Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+Note: That buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
+
+Input: prices = [7,6,4,3,1]
+Output: 0
+Explanation: In this case, no transactions are done and the max profit = 0.
+
+---
