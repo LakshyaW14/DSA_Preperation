@@ -66,6 +66,7 @@ class Solution :
 # Time Complexity: O(N), where N is the size of the input array. \
 #     This is because we are iterating through the array once to count occurrences and then iterating through the hashmap to find the majority element.
 
+
 # Space Complexity: O(N), as we are using a hashmap to store the counts of each element,\
 #       which can take up to N space in the worst case.
 
