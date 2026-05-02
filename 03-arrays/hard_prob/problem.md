@@ -74,3 +74,5 @@ Explanation: we have a sorted array and the sorted array has 0 inversions as for
 
 ---
 
+## 07 -> 
+
