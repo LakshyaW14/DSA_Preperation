@@ -42,9 +42,9 @@ def Longest_Subarray (nums, k):
     # return max_length
 
 #-------------------------------------------------------------
-# Optimal Appraoch 
+# Better  Appraoch 
 """Hashing"""
-# Only for Positives and Negatives 
+# Only for Positives and also works for Negatives 
 
 def LongestSubarray_Hashing(nums,k):
     # Running Prfix Sum 
@@ -57,7 +57,7 @@ def LongestSubarray_Hashing(nums,k):
 
     # Iterate Over the array 
     for i in range (len(nums)):
-        # Update Running sum 
+        # Update Running Prefix sum 
         s += nums[i]
 
         # Subarray from 0 to 1
@@ -80,7 +80,57 @@ def LongestSubarray_Hashing(nums,k):
     # Return Best length 
     return maxi 
 
+# time complexity O(n x 1) avg case -> no collisions ( unordered map ) each hashmap lookup + insertion takes O(1) on avg
+# O( n x n ) worst case  Only if all hash operations degrade (extremely unlikely in practice)
+# check all subarrays
+
+# Space Complexity O(n)
+
+
+#--------------------------------------------
+
+# Optimal Approach 
+""" Two Pointers """
+
+# Oneline Intuition -> Grow right, if sum > k, trim left 
+
+def LongestSubarray_TwoPointer(nums,  k):
+
+    # Intialize Two pointers to mark the start and end of the window
+    left, right = 0, 0
+
+    # Max length so far of the sub array 
+    maxi = 0
+
+    # To store the Sum of elements on the window 
+    s = 0
+
+    # iterate through the array 
+    while right < len(nums):
+        
+        s += nums[right]
+
+        # if the sum exceeds k, shrink the window
+        while ( left <= right ) and s > k :
+            s -= nums[left]
+            left += 1
+        
+        # if the Sum is equal to k
+        if s == k:
+            # Update the Max_Length 
+            maxi = max(maxi, right-left+1)
+
+        # Update the right pointer 
+        right += 1
+        
+    
+    # Return the Max length 
+    return maxi 
+
+
+        
+
 
 
 nums = [10, 5, 2, 7, 1, 9]
-print(LongestSubarray_Hashing(nums, 15))
+print(LongestSubarray_TwoPointer(nums, 15))
