@@ -43,7 +43,43 @@ def Kadane_Algo_Better (nums):
 
     return maxi 
 
+# TC O(N^2)
+# SC O(1)
+
+#------------------------------------------------
+# Optimal Approach 
+""" Kadane's Algorithm"""
+
+# Oneline Intuition -> Simply move -> Add on element to sum, if sum is smaller, neglect the subarray
+
+
+def Kadane_Algo_Optimal (nums):
+    # current sum of subarray 
+    s = 0
+
+    # maximum sum
+    maxi = float('-inf')
+
+    # iterate through the array 
+    for i in range (len(nums)):
+        # Add the current element to the sum 
+        s += nums[i]
+
+        # Update maxi if the sum is greater 
+        if s > maxi:
+            maxi = s
+        
+        # Reset sum to 0 if it becomes negative
+        if s  < maxi :
+            s = 0
+    # return the maximum subarray sum found  
+    return maxi 
+
+# Time Complexity: O(n), where n is the number of elements in the array. We traverse the array only once.
+
+# Space Complexity: O(1). We use a constant amount of space for variables.
 
 nums = [-2,1, -3, -4, -1, -2, 1, 5, 4]
 print(Kadane_Algo(nums))
 print(Kadane_Algo_Better(nums))
+print(Kadane_Algo_Optimal(nums))
