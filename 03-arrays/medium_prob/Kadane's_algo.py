@@ -2,7 +2,7 @@
 # Brute Force Approach 
 # Three nested loop
 # 
-def Kadane_algo (nums):
+def Kadane_Algo (nums):
 
     # Initialize maximum sum with the smallest possible integers
     maxi = float ('-inf')
@@ -26,11 +26,24 @@ def Kadane_algo (nums):
 
 # TC O(n^3)
 # SC O(1)
-# def Kadane_Algo (arr)
 
 
-    
-    pass
+#---------------------------------------------------
+
+# Better Approach 
+
+def Kadane_Algo_Better (nums):
+    maxi =  float ('-inf')
+
+    for i in range (len(nums)):
+        s = 0
+        for j in range ( i, len(nums)):
+            s += nums[j]
+        maxi = max (maxi, s)
+
+    return maxi 
+
 
 nums = [-2,1, -3, -4, -1, -2, 1, 5, 4]
-print(Kadane_algo(nums))
+print(Kadane_Algo(nums))
+print(Kadane_Algo_Better(nums))
