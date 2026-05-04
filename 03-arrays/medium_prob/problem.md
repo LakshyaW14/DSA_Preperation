@@ -38,6 +38,8 @@ Explanation:
 
 # 04 - > Kadane's Algorithm : Maximum Subarray Sum in an Array
 
+Oneline Intuition -> Simply move -> Add on element to sum, if sum is smaller, neglect the subarray
+
 Problem Statement: Given an integer array nums, find the subarray with the largest sum and return the sum of the elements present in that subarray.
 
 A subarray is a contiguous non-empty sequence of elements within an array.
