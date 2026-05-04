@@ -44,6 +44,7 @@ def Longest_Subarray (nums, k):
 #-------------------------------------------------------------
 # Better  Appraoch 
 """Hashing"""
+""" Prefix Sum """
 # Only for Positives and also works for Negatives 
 
 def LongestSubarray_Hashing(nums,k):
@@ -91,7 +92,7 @@ def LongestSubarray_Hashing(nums,k):
 
 # Optimal Approach 
 """ Two Pointers """
-
+# Positives and Zeroes 
 # Oneline Intuition -> Grow right, if sum > k, trim left 
 
 def LongestSubarray_TwoPointer(nums,  k):
@@ -127,10 +128,28 @@ def LongestSubarray_TwoPointer(nums,  k):
     # Return the Max length 
     return maxi 
 
+# Time Complexity: O(2N), where N is the size of the array. The algorithm traverses the array once with two pointers, making it linear in time complexity.
+# The Inner Loop won't run for n times all the time
 
+# Space Complexity: O(1), as it uses a constant amount of space.
+
+
+
+# Important Constraint (Very Important for Interviews)
+
+# This two-pointer / sliding window approach ONLY works when:
+
+#  -> All elements in nums are non-negative
+
+# Why?
+# Because shrinking the window reduces the sum predictably.
+# If negatives exist → sum can behave unpredictably → sliding window fails.
+
+# For arrays with negative numbers, you must use:
+# ->  Prefix Sum + Hashing (your previous approach)
         
 
-
+#--------------------------------------------
 
 nums = [10, 5, 2, 7, 1, 9]
 print(LongestSubarray_TwoPointer(nums, 15))
