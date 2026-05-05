@@ -32,4 +32,33 @@ def Rearrange_Elements(nums):
 
 # optimal Approach 
 
-def Rearrange_Elements_optimal 
+def Rearrange_Elements_optimal(nums):
+    n = len(nums)
+
+    ans = [0] * n # Intialize result array with zeroes
+
+    # Even index for positive numbers 
+    pos_idx = 0
+
+    # Odd index for negative numbers 
+    neg_idx = 1
+
+    for num in nums :
+        if num < 0:
+            # Place negative at odd indices 
+            ans[neg_idx] = num
+            neg_idx += 2
+        else:
+            # Place pos at even indices
+            ans[pos_idx] = num
+            pos_idx += 2
+    return ans
+
+
+# Time Complexity: O(N) { O(N) for traversing the array once and substituting positives and negatives simultaneously using pointers, where N = size of the array A}.
+
+# Space Complexity: O(N) { Extra Space used to store the rearranged elements separately in an array, where N = size of array A}.
+
+nums = [ 3,1, -2, -5, 2, -4 ]
+print(Rearrange_Elements(nums))
+print(Rearrange_Elements_optimal(nums))
