@@ -74,5 +74,13 @@ Explanation: we have a sorted array and the sorted array has 0 inversions as for
 
 ---
 
-## 07 -> 
+## 07 -> Maximum Product Subarray in an Array
+
+Problem Statement: Given an array that contains both negative and positive integers, find the maximum product subarray.
+
+Examples
+Input: Nums = [1,2,3,4,5,0]
+Output: 120
+Explanation: 
+In the given array, 1×2×3×4×5 gives maxim
 
