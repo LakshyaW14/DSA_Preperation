@@ -83,6 +83,33 @@ arr[] = {1,2,-4,-5}, N = 4
 Output:
 1 -4 2 -5
 Explanation: 
+
 Positive elements = 1,2
 Negative elements = -4,-5
 To maintain relative ordering, 1 must occur before 2, and -4 must occur before -5.
+
+---
+
+# 07 -> next_permutation : find next lexicographically greater permutation
+
+
+Problem Statement: Given an array Arr[] of integers, rearrange the numbers of the given array into the lexicographically next greater permutation of numbers.
+
+If such an arrangement is not possible, it must rearrange to the lowest possible order (i.e., sorted in ascending order).
+
+Examples
+Input: Arr[] = {1,3,2}
+Output: {2,1,3}
+Explanation: All permutations of {1,2,3} are {{1,2,3} , {1,3,2}, {2,13} , {2,3,1} , {3,1,2} , {3,2,1}}. So, the next permutation just after {1,3,2}
+
+# 08 -> Problem Statement: .
+
+Examples
+Example 1:
+Input:
+ arr = [4, 7, 1, 0]  
+Output:
+ 7 1 0  
+Explanation:
+ The rightmost element (0) is always a leader.  
+7 and 1 are greater than the elements to their right, making them leaders as well.
