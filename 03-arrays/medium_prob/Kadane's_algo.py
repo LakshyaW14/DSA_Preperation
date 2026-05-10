@@ -56,7 +56,6 @@ def Kadane_Algo_Better (nums):
 def Kadane_Algo_Optimal (nums):
     # current sum of subarray 
     s = 0
-
     # maximum sum
     maxi = float('-inf')
 
@@ -72,14 +71,47 @@ def Kadane_Algo_Optimal (nums):
         # Reset sum to 0 if it becomes negative
         if s  < maxi :
             s = 0
-    # return the maximum subarray sum found  
+    # return the maximum subarray sum found
     return maxi 
 
 # Time Complexity: O(n), where n is the number of elements in the array. We traverse the array only once.
 
 # Space Complexity: O(1). We use a constant amount of space for variables.
 
+
+
+
+
+#--------------------------------------------------------
+# Second Variation -> Print Subarray with maximum sum 
+
+def Kadane_second(nums):
+    ans_start, ans_end = -1, -1
+    s = 0
+    maxi= float('-inf')
+
+    for i in range (len(nums)):
+        if s == 0:
+            start = i
+        
+        s += nums[i]
+
+        # Update maxi 
+        if s > maxi:
+            maxi = s
+            ans_start= start
+            ans_end = i
+
+        # reset sum to  0 if it becomes negative
+        if s < 0:
+            s = 0
+        
+    # Return the subarray with maximum sum 
+    return nums[ans_start:ans_end +1]
+
+
 nums = [-2,1, -3, -4, -1, -2, 1, 5, 4]
 print(Kadane_Algo(nums))
 print(Kadane_Algo_Better(nums))
 print(Kadane_Algo_Optimal(nums))
+print(Kadane_second(nums))
