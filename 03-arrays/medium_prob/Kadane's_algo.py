@@ -80,8 +80,6 @@ def Kadane_Algo_Optimal (nums):
 
 
 
-
-
 #--------------------------------------------------------
 # Second Variation -> Print Subarray with maximum sum 
 
@@ -109,6 +107,8 @@ def Kadane_second(nums):
     # Return the subarray with maximum sum 
     return nums[ans_start:ans_end +1]
 
+
+#--------------------------------------------------
 
 nums = [-2,1, -3, -4, -1, -2, 1, 5, 4]
 print(Kadane_Algo(nums))
