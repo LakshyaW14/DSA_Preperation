@@ -24,5 +24,37 @@ def Stock_Buy_Sell(nums):
 # Space Complexity: O(1) No extra space used, only variables for storing max profit.
 
 #---------------------------------------------------
+
+#optimal Approach 
+
+
+def Stock_Optimal(nums):
+    # Intialize minimum number 
+    min_price = float('inf')
+
+    # Intialize max profit 
+    max_profit = 0
+
+    for num in nums:
+        
+        # if current price is less than min price, update min price
+        if num < min_price:
+            min_price = num
+
+        # calculate profit and update max_profit if it's greater 
+        else:
+            max_profit = max(max_profit, num - min_price)
+
+    #return 
+    return max_profit
+
+# Time Complexity: O(n),This is because we are iterating through the array of prices exactly once. There are no nested loops or recursive calls.
+
+# Space Complexity: O(1),Only two variables are used to store the minimum price and maximum profit, regardless of the input size
+
+#-------------------------------------------------------
+
+
 nums=[7,1,5,3,6,4]
+print(Stock_Optimal(nums))
 print(Stock_Buy_Sell(nums))
