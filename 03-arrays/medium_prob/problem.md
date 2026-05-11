@@ -52,7 +52,7 @@ Output:
  15  
 Explanation:
  The subarray from index 0 to index 4 has the largest sum = 15, which is the maximum sum of any contiguous subarray.
-
+# second variation-> print the subarray with maximum sum 
 ---
 
 # 05 -> Stock Buy And Sell
