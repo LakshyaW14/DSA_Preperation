@@ -26,7 +26,35 @@ def Leaders_InArray(nums):
 
 
 #------------------------------------------------
+# Optimal Solution 
+
+def Leaders_Optimal (nums):
+    ans=[]
+    
+    # Last element always a leader
+    # last ele is fixed, so max-val=nums[-1]
+    max_val = float('-inf')
+
+    # iterating Backwards starting for last second element 
+    for i in range(len(nums)-1, -1, -1):
+        # Checking element from right to left
+        
+        if nums[i] > max_val:
+            ans.append(nums[i])
+            max_val = nums[i]
+
+    # ans.reverse() for matching the order
+    return ans
+
+
+# Time Complexity: O(N), where N is the size of the input array. This is because we traverse the array only once.
+
+# Space Complexity: O(1), as we are using only a constant amount of extra space
+
+#---------------------------------------------------
 
 nums=[10, 22, 12, 3, 0, 6]
 print(Leaders_InArray(nums))
+print(Leaders_Optimal(nums))
+
         
