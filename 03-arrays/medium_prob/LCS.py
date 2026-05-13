@@ -11,8 +11,6 @@ class Solution:
                 found=True
         return found
     
-    # 
-    
 
     def LCS(self,nums):
         n = len(nums)
@@ -55,8 +53,62 @@ class Solution:
 
 #-------------------------------------------
 
+
+# Better Approach 
+# Using Sorted Array 
+
+    def LCS_Better (self,nums):
+        n=len(nums)
+
+        # return 0 if the array is empty
+        if n == 0:
+            return 0
+
+        nums.sort()
+
+        # the last smaller element
+        last_smaller = float('-inf')
+
+        # count current sequence length 
+        count = 0
+
+        # longest sequence length 
+        longest = 1
+
+        for i in range(n):
+            # if consecutive element exist 
+            if nums[i] - 1 == last_smaller:
+
+                # update count for new sequence
+                count +=1
+                # update last smaller
+                last_smaller = nums[i]
+
+            # if not consecutive not exist (i.e. a new sequence is found )
+            elif nums[i] != last_smaller:
+                # reset counter for new sequence 
+                count = 1
+                # update last smaller 
+                last_smaller = nums[i]
+            
+            # update longest
+            longest= max(longest, count)
+        return longest
+
+#Time Complexity: O(n log n) + O(n), where n is the number of elements in the array. This is due to the sorting step, which is the most time-consuming operation in this approach.
+
+# Space Complexity: O(1), as we are using only a constant amount of extra space.
+
+#------------------------------
+
+
+
+
+
+
 nums =  [0, 3, 7, 2, 5, 8, 4, 6, 0, 1] 
 
 sol = Solution()
 print(sol.LCS(nums))
+print(sol.LCS_Better(nums))
 
