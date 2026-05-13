@@ -102,7 +102,7 @@ Input: Arr[] = {1,3,2}
 Output: {2,1,3}
 Explanation: All permutations of {1,2,3} are {{1,2,3} , {1,3,2}, {2,13} , {2,3,1} , {3,1,2} , {3,2,1}}. So, the next permutation just after {1,3,2}
 
-# 08 -> Problem Statement: .
+# 08 -> Problem Statement: Leaders in array
 
 Examples
 Example 1:
@@ -114,4 +114,19 @@ Explanation:
  The rightmost element (0) is always a leader.  
 7 and 1 are greater than the elements to their right, making them leaders as well.
 
-# 09 ->
+# 09 ->Longest Consecutive Sequence in an Array
+
+
+
+Problem Statement: Given an array nums of n integers.
+
+Return the length of the longest sequence of consecutive integers. The integers in this sequence can appear in any order.
+
+Examples
+Example 1:
+Input:
+ nums = [100, 4, 200, 1, 3, 2]  
+Output:
+ 4  
+Explanation:
+ The longest sequence of consecutive elements in the array is [1, 2, 3, 4], which has a length of 4. This sequence can be formed regardless of the initial order of the elements in the array.
