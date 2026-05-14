@@ -3,7 +3,7 @@
 
 class Solution:
 
-    # Helper function to perform linear search 
+    # Helper function to perform linear search O(N^2)
     def Linear_Search(self,arr, target):
         found=False
         for num in arr:
@@ -84,7 +84,7 @@ class Solution:
                 # update last smaller
                 last_smaller = nums[i]
 
-            # if not consecutive not exist (i.e. a new sequence is found )
+            # if no consecutive number exist (i.e. a new sequence is found )
             elif nums[i] != last_smaller:
                 # reset counter for new sequence 
                 count = 1
@@ -101,9 +101,46 @@ class Solution:
 
 #------------------------------
 
+#Optimal solution 
+# using SET ds 
+
+    def LCS_Optimal(self,nums):
+        n=len(nums)
+        if n == 0:
+            return 0
+        
+        #store the arr in set
+        st=set(nums) # O(n)
+
+        # Initialize the longest sequence length
+        longest = 1 
+
+        # Iterate through the set 
+        for num in st:      # O(n)
+            # Check if it is a starting number of sequence
+            if ( num -1 ) not in st:
+                # Intialize the count
+                count =1
+                # Staring element of the sequence
+                x = num
+                
+                #Find the Consecutive numbers in set 
+                while ( x+1 ) in st:
+                    # Move to the Next Element in the sequence 
+                    x += 1
+                    # Increment the count 
+                    count += 1
+                
+                # update the longest
+                longest = max(longest, count)
+        return longest 
 
 
+# Time Complexity: O(n), where n is the number of elements in the array. This is because we traverse each element once to build the set and then again to find the longest consecutive sequence.
 
+# Space Complexity: O(n), as we use a set to store the unique elements of the array, which in the worst case can be equal to the size of the input array.        
+
+#-----------------------------------------
 
 
 nums =  [0, 3, 7, 2, 5, 8, 4, 6, 0, 1] 
@@ -111,4 +148,6 @@ nums =  [0, 3, 7, 2, 5, 8, 4, 6, 0, 1]
 sol = Solution()
 print(sol.LCS(nums))
 print(sol.LCS_Better(nums))
+print(sol.LCS_Optimal(nums))
+
 
