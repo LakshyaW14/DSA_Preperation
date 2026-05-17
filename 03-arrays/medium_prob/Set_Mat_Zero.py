@@ -87,9 +87,61 @@ class solution:
 #---------------------------------------------------------------------------
 
 
+# Optimal Approach
+# like Better Appraoch -> move the hasharray inside the matrix ( like a inplace modification )
+
+    def SetMat_Optimal (self, matrix):
+
+        # Important Intuition follow-up
+        # col[] = matrix[0][]
+        # row[] = matrix[][0]
+
+        # Get Dimensions of Matrix
+        n = len(matrix)
+        m = len(matrix[0])
+
+        col0 = 1
+
+        # First Pass:
+        for i in range(n):
+            for j in range(m):
+                if matrix[i][j] == 0:
+                    # Mark the i-th row
+                    matrix[i][0] = 0
+
+                    # mark the j-th col
+                    if j != 0:
+                        matrix[0][j] = 0
+
+        # iterate ignoring the hash-array 
+        for i in range(1,n):
+            for j in range(1, m):
+                if matrix[i][j] != 0:
+                    # check 
+                    if ( matrix[i][0] == 0 or matrix[0][j]==0):
+                        matrix[i][j] = 0
+                    else:
+                        col0 = 0
+
+        # if m
+        if matrix[0][0] == 0:
+            for j in range(m):
+                matrix[0][j] = 0
+        
+        if col0 == 0:
+            for i in range(n):
+                matrix[i][0] = 0
+
+
+#Time Complexity: O(m × n),We iterate over the entire matrix a constant number of times (first pass for markers, second pass for zeroing, final pass for first row/col), where m = number of rows and n = number of columns.
+
+# Space Complexity: O(1),No extra space is used apart from a few boolean flags; all marker information is stored within the first row and column of the matrix itself.
+ 
+
 matrix = [[1,1,1,1],[1,0,1,1],[1,1,1,0]]
 sol=solution()
 # sol.Set_Mat_Zero(matrix)
-sol.SetMat_Better(matrix)
+# sol.SetMat_Better(matrix)
+sol.SetMat_Optimal(matrix)
 for row in matrix:
     print(row)
