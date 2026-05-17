@@ -48,8 +48,48 @@ class solution:
 
 #-----------------------------------------------------------------
 
+# Better Approach 
+# using hash arr 
+
+
+    def SetMat_Better (self, matrix):
+        # rows
+        n = len(matrix)
+        # col 
+        m = len(matrix[0])
+
+        # Hash Arrays for rows and col 
+        row_arr = [0] * (m +1)
+        col_arr = [0] * (n +1)
+
+        # first Pass : mark rows ans col that needs to be a zero 
+        for i in range(n):
+            for j in range(m):
+                # if element is zero, mark
+                if matrix[i][j] == 0:
+                    row_arr[i] = 1
+                    col_arr[j] = 1
+
+
+        # Second Pass: set zero to cells based on markers 
+        for i in range (n):
+            for j in range(m):
+                # if row or col is marked, set zero
+                if (row_arr[i] or col_arr[j]) == 1:
+                    matrix[i][j] = 0
+
+# Time Complexity: O (2(m × n)),We make two passes over the matrix.\
+# First pass to identify rows and columns to be zeroed (O(m × n)).Second pass to update the matrix using the markers (O(m × n)).Total time is proportional to the number of cells in the matrix, so O(m × n).
+# Space Complexity: O(m + n),We store two extra arrays one for m rows and one for n columns. /
+# No other extra space is used besides these arrays.
+
+
+#---------------------------------------------------------------------------
+
+
 matrix = [[1,1,1,1],[1,0,1,1],[1,1,1,0]]
 sol=solution()
-sol.Set_Mat_Zero(matrix)
+# sol.Set_Mat_Zero(matrix)
+sol.SetMat_Better(matrix)
 for row in matrix:
     print(row)
