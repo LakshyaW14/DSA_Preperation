@@ -30,13 +30,42 @@ def Rotate_matrix (matrix):
     return ans
 
 
-
-
 #Time Complexity: O(N²),Each element of the matrix is visited exactly once and placed into a new matrix, \
 # so the time taken is proportional to the total number of elements.
 
 # Space Complexity: O(N²),We use an additional matrix of the same size to store the rotated result, \
 # leading to O(N²) extra space.
+
+#----------------------------------------
+
+
+# Optimal Appraoch 
+# Using Transposing 
+
+def Rotate_Mat_optimal (mat):
+    # Dimension of mat 
+    n = len(mat)
+
+    # Transposing the element 
+    # Row -> Col 
+    # col -> Row
+    # Step 1 :
+    for i in range(n):
+        for j in range(i+1, n):
+            # swap elements 
+            mat[i][j], mat[j][i] = mat[j][i], mat[i][j]
+    
+    # Step 2
+    # Reverse each row
+    # Reverse the current row to stimulate clockwise rotation 
+    for i in range(n):
+        matrix[i].reverse()
+
+# Time Complexity: O(N²),We traverse every element once during transposition and again during reversal of each row, resulting in a total of O(N²) time.
+
+# Space Complexity: O(1),All operations are done in-place using only temporary variables. No extra matrix is used.
+
+#--------------------------------------------------------------------
 
 matrix = [
     [1, 2, 3],
@@ -51,6 +80,6 @@ def Print_Mat(mat):
 
 print("original Array ->")
 Print_Mat(matrix)
-Rotated_Array= Rotate_matrix(matrix)
+Rotate_Mat_optimal(matrix)
 print("Rotated Mat ->")
-Print_Mat(Rotated_Array)
+Print_Mat(matrix)
