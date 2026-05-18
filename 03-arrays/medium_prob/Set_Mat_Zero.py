@@ -88,6 +88,7 @@ class solution:
 
 
 # Optimal Approach
+
 # like Better Appraoch -> move the hasharray inside the matrix ( like a inplace modification )
 
     def SetMat_Optimal (self, matrix):
@@ -95,39 +96,61 @@ class solution:
         # Important Intuition follow-up
         # col[] = matrix[0][]
         # row[] = matrix[][0]
+        
+        # Zero filling intuition 
+        # first-> subarray excluding(row and col hash-arrays)
+        # second-> col_arr
 
         # Get Dimensions of Matrix
         n = len(matrix)
         m = len(matrix[0])
 
+        # variable for marking the  first col of matrix
         col0 = 1
+        # y col0 is needed
 
-        # First Pass:
-        for i in range(n):
-            for j in range(m):
+        #cannot represent BOTH:
+            # whether first row should be zero
+            # whether first column should be zero
+        # So:
+            # matrix[0][0] → first row marker
+            # col0 → first column marker
+
+        # This is the key intuition.
+
+        # First Pass: marking the hash arr of row and col 
+        for i in range( n):
+            for j in range( m):
                 if matrix[i][j] == 0:
                     # Mark the i-th row
                     matrix[i][0] = 0
 
                     # mark the j-th col
-                    if j != 0:
-                        matrix[0][j] = 0
-
-        # iterate ignoring the hash-array 
-        for i in range(1,n):
-            for j in range(1, m):
-                if matrix[i][j] != 0:
-                    # check 
-                    if ( matrix[i][0] == 0 or matrix[0][j]==0):
-                        matrix[i][j] = 0
-                    else:
+                    if j == 0:
                         col0 = 0
 
-        # if m
+                    # when j != 0:
+                    else:     
+                        matrix[0][j] = 0
+
+        # Second Pass :
+        # Sub array marking zero 
+        # set zero in INNER Matrix, ignoring the hash-array 
+        for i in range(1,n):
+            for j in range(1, m):
+                if matrix[i][j] != 0:       # this step can be removed, coz assigning zero again costs nothing -> simpliflies logic
+                    # check for col and row
+                    if ( matrix[i][0] == 0 or matrix[0][j]==0):
+                        matrix[i][j] = 0
+                  
+        # print(col0)
+
+        # handle the top first row, that dependent on mat[0][0] to be set zero 
         if matrix[0][0] == 0:
             for j in range(m):
                 matrix[0][j] = 0
         
+        # handle the first col, that dependent on the variable col0
         if col0 == 0:
             for i in range(n):
                 matrix[i][0] = 0
@@ -138,10 +161,66 @@ class solution:
 # Space Complexity: O(1),No extra space is used apart from a few boolean flags; all marker information is stored within the first row and column of the matrix itself.
  
 
-matrix = [[1,1,1,1],[1,0,1,1],[1,1,1,0]]
+# -------------------------------------------------------
+
+# cleaner version of optimal solution 
+
+    def cleaner_Set_Mat(self, matrix):
+
+        n = len(matrix)
+        m = len(matrix[0])
+
+
+        # Flag to track if first row should be zeroed
+        first_row_zero = False
+        # similarly 
+        first_col_zero = False
+
+        # Check for zero in row 
+        for j in range(m):
+            if matrix[0][j] == 0: 
+                first_row_zero = True
+                break
+        # col check 
+        for i in range(n):
+            if matrix[i][0] == 0: 
+                first_col_zero = True
+                break
+        # use first row and col as markers 
+        for i in range(1,n):
+            for j in range(1, m):
+                if matrix[i][j] == 0:
+                    matrix[i][0] = 0
+                    matrix[0][j] = 0
+
+        # set inner array cells to zero based on markers  
+        for i in range(1,n):
+            for j in range(1, m):
+                if (matrix[i][0] == 0) or (matrix[0][j]) == 0:
+                    matrix[i] [j] = 0
+
+
+        # zero the first row if needed
+        if first_row_zero:
+            for j in range(m):
+                matrix[0][j] = 0
+
+        # zero the first col if needed
+        if first_col_zero:
+            for i in range(n):
+                matrix[i][0] = 0
+                       
+# Tc and Sc same as Optimal Sol
+
+
+#------------------------------------------------------------------------------------
+
+matrix = [[1,1,1,1,1],[1,1,0,1,1],[0,1,1,1,1]]
 sol=solution()
 # sol.Set_Mat_Zero(matrix)
 # sol.SetMat_Better(matrix)
 sol.SetMat_Optimal(matrix)
+# sol.cleaner_Set_Mat(matrix)
+
 for row in matrix:
     print(row)
