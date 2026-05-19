@@ -102,7 +102,7 @@ Input: Arr[] = {1,3,2}
 Output: {2,1,3}
 Explanation: All permutations of {1,2,3} are {{1,2,3} , {1,3,2}, {2,13} , {2,3,1} , {3,1,2} , {3,2,1}}. So, the next permutation just after {1,3,2}
 
-# 08 -> Problem Statement: Leaders in array
+# 08 ->  Leaders in array
 
 Examples
 Example 1:
@@ -142,3 +142,45 @@ Examples
 Input: matrix=[[1,1,1],[1,0,1],[1,1,1]]
 Output: [[1,0,1],[0,0,0],[1,0,1]]
 Explanation: Since matrix[2][2]=0.Therfore the 2nd column and 2nd row wil be set to 0.
+
+---
+
+# 11 - Spiral Traversal of Matrix
+
+
+Problem Statement: Given a Matrix, print the given matrix in spiral order.
+
+Examples
+Input: Matrix[][] = { { 1, 2, 3, 4 },{ 5, 6, 7, 8 },{ 9, 10, 11, 12 },{ 13, 14, 15, 16 } }
+Outhput: 1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10.
+Explanation: The output of matrix in spiral form.
+
+---
+
+# 12 -> Count Subarray sum Equals K
+
+
+Problem Statement: Given an array of integers and an integer k, return the total number of subarrays whose sum equals k. A subarray is a contiguous non-empty sequence of elements within an array.
+
+Examples
+Input : N = 4, array[] = {3, 1, 2, 4}, k = 6
+Output: 2
+Explanation: The subarrays that sum up to 6 are [3, 1, 2] and [2, 4].
+
+---
+
+# 13 -> Rotate Image by 90 degree
+
+
+Problem Statement: Given an N * N 2D integer matrix, rotate the matrix by 90 degrees clockwise. The rotation must be done in place, meaning the input 2D matrix must be modified directly..
+
+Examples
+Input :matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+            
+Output :
+matrix = [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
+
+
+Explanation :
+First, we transpose the matrix: rows become columns. Then, we reverse each row to simulate 90° clockwise rotation. So element at (0,0) goes to (0,2), (0,1) goes to (1,2), and so on, achieving the rotated layout.
+
