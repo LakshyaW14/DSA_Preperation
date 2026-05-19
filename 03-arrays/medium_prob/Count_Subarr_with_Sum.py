@@ -38,8 +38,49 @@ def Count_SubArr_better(nums,target):
 # Space Complexity: O(1),Only a few extra variables are used, so constant extra space regardless of input size.
 
 #------------------------------------------
+#   Optimal Approach 
+# using PREFIX SUM 
+
+def Count_SubArr_Optimal (nums, target):
+
+    #  To Store PreFix_sum Count 
+    mp = {}
+
+    count = 0
+    pre_sum =0
+
+    # Base Case : Prefix sum 0 has Occured once
+    mp[0] = 1
+
+    # traversing 
+    for i in range (len(nums)):
+        # Adding current element 
+        pre_sum += nums[i]
+        
+        # Value to be excluded
+        rem = pre_sum - target
+
+        # if  rem -> prefix sum has been seen before 
+        # add it to the result
+        if rem in mp:
+            count += mp[rem]
+
+        # Update the Frequency of current prefix sum 
+        
+        mp[pre_sum] = mp.get(pre_sum,0) + 1
+    
+        
+    return count 
+
+# Time Complexity: O(n) We traverse the array once, where n is the size of the array. Each prefix sum operation and hashmap lookup is O(1) on average. if ordered mp is used O(n*logn)
+
+# Space Complexity: O(n) In the worst case, all prefix sums are distinct and stored in the hashmap, so space grows linearly with input size.
+
+#---------------------------------------------------------
 
 nums=[3,1,2,4]
 k = 6
 print(Count_SubArr(nums,k))
-# print(Count_SubArr_better(nums,k))
+print(Count_SubArr_better(nums,k))
+print(Count_SubArr_Optimal(nums,k))
+
