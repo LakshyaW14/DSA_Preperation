@@ -1,6 +1,6 @@
 # 🧠 DSA Preparation in Python
 
-This repository contains my structured journey of mastering Data Structures and Algorithms using Python, with a focus on coding interviews and problem-solving skills.
+This repository contains my structured journey of mastering Data Structures and Algorithms using Striver's  ( A2z DSA Sheet ) in Python, with a focus on coding interviews and problem-solving skills.
 
 ---
 
