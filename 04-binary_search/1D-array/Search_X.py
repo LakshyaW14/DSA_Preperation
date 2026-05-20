@@ -35,5 +35,42 @@ def BS (nums, target):
 
 # ----------------------------------------------
 
-nums = [ 2,3,5,6,8,9,11,123]
+# Recursive Approach 
+
+def BS_Recursive(nums,target, low, high):
+   # Base case 
+    if low > high :
+        return -1
+    
+    # Middle Index
+    mid = ( low + high)//2
+
+    if nums[mid] == target:
+        return mid 
+    # Search right half , if target greater 
+    elif nums[mid] < target :
+        return BS_Recursive(nums, target, mid + 1, high)
+    # Search left half , if smaller 
+    else:
+        return BS_Recursive(nums, target, low, mid - 1)
+
+    # Public Function to initiate search 
+def Search (nums, target):
+    return BS_Recursive(nums, target, 0, len(nums)-1)
+
+
+# TC Worst O(logn) Best O(1)
+# Sc This is a recursive implementation, so function calls are stored in the recursion stack.
+
+# Each recursive call adds one stack frame.
+# Maximum recursive depth = log n
+
+# Therefore:
+
+# Auxiliary Space Complexity: O(log n)
+
+# The iterative version is more space-efficient because it avoids recursion stack usage.
+#---------------------------------------------
+nums = [ 2,3,5,6,8,9,10,123]
 print(BS(nums,11))
+print(Search(nums,2))
