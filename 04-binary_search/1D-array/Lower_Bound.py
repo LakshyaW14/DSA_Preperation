@@ -2,7 +2,7 @@
 # Brute Force Approach 
 
 
-# Smallest Index such that ( nums[idx] > x )
+# Smallest Index such that ( nums[idx] >= x )
 def Lower_Bound (nums, x):
     for i in range (len(nums)):
         if nums[i] >= x:
