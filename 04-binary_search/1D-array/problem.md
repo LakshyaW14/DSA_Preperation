@@ -47,3 +47,52 @@ Example 1:
 Input Format: arr[] = {1,2,4,7}, x = 6
 Result: 3
 Explanation: 6 is not present in the array. So, if we will insert 6 in the 3rd index(0-based indexing), the array will still be sorted. {1,2,4,6,7}.
+
+---
+
+## 05 - Floor and Ceil in Sorted Array
+
+Problem Statement: ou're given an sorted array arr of n integers and an integer x. Find the floor and ceiling of x in arr[0..n-1]. The floor of x is the largest element in the array which is smaller than or equal to x. The ceiling of x is the smallest element in the array greater than or equal to x
+
+Examples
+
+Example 1:
+Input Format: n = 6, arr[] ={3, 4, 4, 7, 8, 10}, x= 5
+Result: 4 7
+Explanation: The floor of 5 in the array is 4, and the ceiling of 5 in the array is 7.
+
+---
+
+## 06 -> Last occurrence in a sorted array
+
+Problem Statement: Given a sorted array of N integers, write a program to find the index of the last occurrence of the target key. If the target is not found then return -1. Note: Consider 0 based indexing
+
+Examples
+Example 1:
+Input:
+ N = 7, target = 13, array[] = {3, 4, 13, 13, 13, 20, 40}  
+Output:
+ 4  
+Explanation:
+ The target value 13 appears for the first time at index number 2 in the array.  
+
+ ---
+
+ # 07 - >  Count Occurrences in Sorted Array
+
+Problem Statement: You are given a sorted array containing N integers and a number X, you have to find the occurrences of X in the given array.
+
+Examples
+Example 1:
+Input:
+ N = 7,  X = 3 , array[] = {2, 2 , 3 , 3 , 3 , 3 , 4}
+Output
+: 4
+Explanation:
+ 3 is occurring 4 times in 
+the given array so it is our answer.
+
+---
+
+
+
