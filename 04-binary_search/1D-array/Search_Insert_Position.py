@@ -18,5 +18,8 @@ def Insert_Position(nums,x):
             low = mid + 1
     return ans 
 
+# Time Complexity O(logn)
+# Space Complexity O(1)
+
 nums = [1,2,4,7]
 print(Insert_Position(nums, 3))

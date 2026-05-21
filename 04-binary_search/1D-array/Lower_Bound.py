@@ -45,4 +45,4 @@ def Lower_Bound_Optimal (nums,x):
 
 nums = [3, 5, 8, 15, 19]
 print(Lower_Bound(nums,9))
-print(Lower_Bound_Optimal(nums,))
+print(Lower_Bound_Optimal(nums,16))

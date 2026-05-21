@@ -40,4 +40,4 @@ def Upper_Bound_Optimal (nums, x):
 
 nums = [3,5,8,9,15,19]
 print(Upper_Bound(nums,9))
-print(Upper_Bound_Optimal(nums,9))
+print(Upper_Bound_Optimal(nums,5))
