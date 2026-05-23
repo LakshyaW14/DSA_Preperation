@@ -1,3 +1,17 @@
+
+# Brute Force - > Linear Search 
+
+def Count(nums,x):
+    count =0
+    for num in nums:
+        if num == x:
+            count += 1
+    return count 
+
+
+
+# ---------------------------------------------------
+
 # Optimal Solution 
 # Simply using the First and last occurrence Binary Search Code 
 # With little Modification 
@@ -40,6 +54,14 @@ def Last (nums,x):
         else:
             high = mid -1 
     return ans 
+
+def Get_occurrence_Optimal (nums,x):
+    first_idx = First(nums, x)
+    if ( first_idx == -1) :
+        return ( -1, -1)
+    last_idx = Last(nums, x)
+    return (first_idx, last_idx )
+
  
 def Count_Occurrences (nums,x):
     first_idx = First(nums, x)
@@ -50,6 +72,7 @@ def Count_Occurrences (nums,x):
 
 nums = [1,2,3,4,5,5,5,5,5,5,6,7,8]
 print(Count_Occurrences(nums,5))
+print(Count(nums,5))
 
 
 # TC O(logn)
