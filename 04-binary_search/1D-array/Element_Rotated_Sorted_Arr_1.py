@@ -4,7 +4,7 @@
 # Brute Force 
 # Linear search 
 
-def Find_element(nums,x):
+def Find_element_Brute(nums,x):
     for num in nums:
         if num == x:
             return nums.index(num)
@@ -63,8 +63,12 @@ def Find_Element_optimal (nums, x):
     # if not Found
     return -1
 
+#Time Complexity: O(log N),We eliminate half of the search space in each iteration using binary search.
 
+# Space Complexity: O(1),We use only a few variables (low, high, mid) no extra space used.
+
+# -------------------------------------------
 
 nums =  [7,8,9,1,2,3,4,5,6]
-print(Find_element(nums, 1))
+print(Find_element_Brute(nums, 1))
 print(Find_Element_optimal(nums, 1))

@@ -8,6 +8,8 @@ def Count(nums,x):
             count += 1
     return count 
 
+# TC O(N)
+# Sc O(1)
 
 
 # ---------------------------------------------------
