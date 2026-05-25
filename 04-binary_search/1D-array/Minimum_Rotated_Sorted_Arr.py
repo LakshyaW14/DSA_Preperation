@@ -53,6 +53,8 @@ def Find_mini_Rotated_Sorted (nums):
 
 def Find_Minimum_Cleaner (nums):
     low, high = 0, len(nums)-1
+
+    # No Similar values of low and high
     while ( low < high):
 
         mid = ( low + high)//2
