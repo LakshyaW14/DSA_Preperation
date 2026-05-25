@@ -133,3 +133,31 @@ Explanation: The minimum element in the array is 0.
 
 ---
 
+# 11 -> Find out how many times the array has been rotated
+
+Problem Statement: Given an integer array arr of size N, sorted in ascending order (with distinct values). Now the array is rotated between 1 to N times which is unknown. Find how many times the array has been rotated.
+
+Pre-requisites: Find minimum in Rotated Sorted Array,  Search in Rotated Sorted Array II & Binary Search algorithm
+
+Examples
+Input : arr = [4,5,6,7,0,1,2,3]
+Result: 4
+Explanation: The original array should be [0,1,2,3,4,5,6,7]. So, we can notice that the array has been rotated 4 times.
+
+---
+
+# 12 -> Search Single Element in a sorted array
+
+Problem Statement: Given an array of N integers. Every number in the array except one appears twice. Find the single number in the array.
+
+Examples
+Input : arr[] = {1,1,2,2,3,3,4,5,5,6,6}
+Output: 4
+Explanation: Only the number 4 appears once in the array.
+
+Input: arr[] = {1,1,3,5,5}
+Output : 3
+Explanation: Only the number 3 appears once in the array.
+
+---
+
