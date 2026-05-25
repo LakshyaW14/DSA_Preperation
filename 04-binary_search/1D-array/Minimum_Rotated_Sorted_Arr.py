@@ -51,6 +51,28 @@ def Find_mini_Rotated_Sorted (nums):
 
 # Cleaner Version 
 
-nums = [7,8,9,10,0,1,2,3,4,5,6]
+def Find_Minimum_Cleaner (nums):
+    low, high = 0, len(nums)-1
+    while ( low < high):
+
+        mid = ( low + high)//2
+        
+        # Which half to discard i.e. Sorted half
+        if ( nums[mid] > nums[high]):
+            
+            # Minimum lies in right half ( unsorted one)
+            low = mid + 1
+        # left Half 
+        else:
+            #  Minimum lies in left half ( including mid)
+            high = mid
+
+    # return the minimum element
+    return nums[low]
+
+
+
+nums = [7,8,9,10,1,2,3,4,5,6]
 print(Find_Minimum(nums))
 print(Find_mini_Rotated_Sorted(nums))
+print(Find_Minimum_Cleaner(nums))
