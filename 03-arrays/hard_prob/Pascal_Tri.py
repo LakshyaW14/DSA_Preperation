@@ -21,11 +21,31 @@ def Get_Ele_Pascal_Tri(row, col):
 # TC O(r)
 # SC O(1)
 
+# -----------------------------------------
+
+# Optimal Solution 
+
+def Generate_Row(row):
+    ans_row = []
+    res = 1 
+    ans_row.append(1)
+    for i in range(row):
+        res *= row - i
+        res //= i + 1
+        ans_row.append(res)
+    return ans_row
+
+def Pascal_Tri (n):
+    ans = []
+    for i in range(n):
+        ans.append(Generate_Row(i))
+    return ans 
+
 
 
 
 # print(Get_Ele_Pascal_Tri(5,3))
 
-print(print_nth_row(3))
+print(Pascal_Tri(5))
 
 
