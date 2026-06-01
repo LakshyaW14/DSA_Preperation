@@ -10,19 +10,22 @@ class solution:
         # Get number of cols
         m = len(matrix[0])
 
+        MARK = None
+        # Or MARk = float('inf') for matrix2 and matrix3 Edge Case 
+
         # Helper Function to mark row
         def mark_row(row,col,matrix):
                 
             for col in range(m):
                 if matrix[row][col] != 0:
-                    matrix[row][col] = -1
+                    matrix[row][col] = MARK
         
         # Helper function to mark col
 
         def mark_col(row,col,matrix):
             for row in range(n):
                 if matrix[row][col] != 0:
-                    matrix[row][col] = -1
+                    matrix[row][col] = MARK
 
         # First pass: mark each row and col
         for i in range (n): # row   (nxm)
@@ -38,7 +41,7 @@ class solution:
         # Second Pass: replace -1 with 0
         for i in range(n):      #O(nxm)
             for j in range(m):
-                if matrix[i] [j] == -1:
+                if matrix[i] [j] == MARK:
                     matrix[i][j] = 0
 
 # Time Complexity: O(m * n * (m + n)), We iterate through every cell (m * n), and for each zero, we potentially mark its entire row (O(n)) and column (O(m)), leading to O(m * n * (m + n)) overall.
@@ -59,8 +62,8 @@ class solution:
         m = len(matrix[0])
 
         # Hash Arrays for rows and col 
-        row_arr = [0] * (m +1)
-        col_arr = [0] * (n +1)
+        row_arr = [0] * n
+        col_arr = [0] * m
 
         # first Pass : mark rows ans col that needs to be a zero 
         for i in range(n):
@@ -216,11 +219,13 @@ class solution:
 #------------------------------------------------------------------------------------
 
 matrix = [[1,1,1,1,1],[1,1,0,1,1],[0,1,1,1,1]]
+matrix2 = [[-1,2,3]]
+matrix3 = [[-1,1,1],[1,0,1],[1,1,-1]]
 sol=solution()
-# sol.Set_Mat_Zero(matrix)
+sol.Set_Mat_Zero(matrix3)
 # sol.SetMat_Better(matrix)
-sol.SetMat_Optimal(matrix)
+# sol.SetMat_Optimal(matrix)
 # sol.cleaner_Set_Mat(matrix)
 
-for row in matrix:
+for row in matrix3:
     print(row)
