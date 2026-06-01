@@ -143,7 +143,7 @@ class solution:
             for j in range(1, m):
                 if matrix[i][j] != 0:       # this step can be removed, coz assigning zero again costs nothing -> simpliflies logic
                     # check for col and row
-                    if ( matrix[i][0] == 0 or matrix[0][j]==0):
+                    if ( matrix[i][0] == 0 ) or (matrix[0][j]==0):
                         matrix[i][j] = 0
                   
         # print(col0)
