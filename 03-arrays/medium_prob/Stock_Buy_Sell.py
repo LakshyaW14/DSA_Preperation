@@ -36,14 +36,14 @@ def Stock_Optimal(nums):
     max_profit = 0
 
     for num in nums:
-        
+        cost = num - min_price
         # if current price is less than min price, update min price
         if num < min_price:
             min_price = num
 
         # calculate profit and update max_profit if it's greater 
         else:
-            max_profit = max(max_profit, num - min_price)
+            max_profit = max(max_profit, cost)
 
     #return 
     return max_profit
