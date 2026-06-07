@@ -1,3 +1,5 @@
+# Merge Two sorted arrays without extra space 
+
 # Brute Force 
 
 def merge_Sorted_Arr(arr1, arr2):
@@ -28,6 +30,7 @@ def merge_Sorted_Arr(arr1, arr2):
         j += 1
 
     for  i in range ( n + m):
+
         if i < n :
             arr1[i] = ans[i]
         else:
