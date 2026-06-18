@@ -52,10 +52,38 @@ def Search_Mat_Better (mat, target):
 
 #----------------------------------------------------------------
 
+# Optimal Sol 
+
+def Search_Mat_optimal (mat, target ):
+    n = len(mat)
+    m = len(mat[0])
+
+    #  intial range 
+    low = 0 
+    high = n * m - 1
+
+    # perform BS
+    while low <= high:
+        mid = (low + high )//2
+
+        # convert 1D Index to 2d Indices
+        row = mid // m
+        col = mid % m
+
+        if mat[row][col] == target :
+            return True
+        elif mat[row][col] < target :
+            low = mid + 1
+        else:
+            high = mid - 1
+
+    return False
+
+
 
 mat = [ [1, 2, 3, 4], 
        [5, 6, 7, 8],
         [9, 10, 11, 12] ]
-target = 13
+target = 10
 
-print(Search_Mat_Better(mat,target))
+print(Search_Mat_optimal(mat,target))
