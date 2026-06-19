@@ -52,7 +52,7 @@ def Search_Mat_Better (mat, target):
 
 #----------------------------------------------------------------
 
-# Optimal Sol 
+# Optimal Sol ( Better for interview )
 
 def Search_Mat_optimal (mat, target ):
     n = len(mat)
@@ -80,10 +80,53 @@ def Search_Mat_optimal (mat, target ):
     return False
 
 
+# Time Complexity: O(log(NxM)), where N = given row number, M = given column number.We are applying binary search on the imaginary 1D array of size NxM.
+
+# Space Complexity: O(1) as we are not using any extra space.
+
+
+# ---------------------------------------------
+
+# Optimal Sol 2
+
+def BS_optimal(mat, target ):
+    n = len(mat)
+    m = len(mat[0])
+
+    start_row = 0 
+    end_row= n -1
+
+    def Search_row(row, mat, target ): # O(logm ) Runs For only One time 
+        low = 0
+        high = m -1 
+        while ( low <= high ):
+            mid = ( low + high )//2 
+            if mat[row][mid] == target:
+                return True
+            elif mat[row][mid] < target :
+                low = mid + 1
+            else:
+                high = mid - 1
+        return False
+     
+    while ( start_row <= end_row):      # O(logn ) Find the Correct row 
+        mid_row = ( start_row + end_row)//2
+
+        if mat[mid_row][0] <= target <= mat[mid_row][m-1] :
+            return Search_row(mid_row, mat, target)
+        elif mat[mid_row][m-1] <  target:
+            start_row = mid_row + 1
+        else:
+            end_row = mid_row - 1
+    return False 
+
+# TC O(logn + logm)
+# SC O(1)
+
 
 mat = [ [1, 2, 3, 4], 
        [5, 6, 7, 8],
         [9, 10, 11, 12] ]
 target = 10
 
-print(Search_Mat_optimal(mat,target))
+print(BS_optimal(mat,target))
