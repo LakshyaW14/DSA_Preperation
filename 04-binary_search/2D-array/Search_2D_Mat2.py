@@ -44,7 +44,8 @@ def Search_better (mat, target):
     return -1,-1
 
 
-# Time Complexity O( n * logm)
+# Time Complexity O( n * logm) where N = given row number, M = given column number. We are traversing all rows and it takes O(N) time complexity. 
+# And for all rows, we are applying binary search. So, the total time complexity is O(N*logM).
 # Space Complexity O(1)
 
 #----------------------------------------------
@@ -64,16 +65,18 @@ def Search_2D_Mat_Optimal (mat, target):
     while ( row < n ) and ( col >= 0):
         # if the Corner Ele is Target 
         if mat[row][col] == target :
-            return True
+            return row,col
         
         # target is greater than corner element
         elif mat[row][col]  < target :
             row += 1
+
         else:
             col -= 1
     return False 
 
-# TC O( n + m ) 
+# TC O( n + m ) where N = given row number, M = given column number. We are starting traversal from (0, M-1), and at most, we can end up being in the cell (M-1, 0). So, 
+# the total distance can be at most (N+M). So, the time complexity is O(N+M).
 # SC O(1)
 
 #--------------------------
