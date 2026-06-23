@@ -1,5 +1,30 @@
 # Find Single Element in Sorted Array 
 
+# Brute Force 
+
+def Find_single_Ele_Brute (arr):
+    n = len(arr)
+    # Edge Cases 
+    if n == 1:
+        return arr[0]
+    
+    for i in range (n):
+        if (arr[i] != arr[i-1] )and( arr[i] != arr[i+1]):
+            return arr[i]
+        if i == 0:
+            if arr[0] != arr[1]:
+                return arr[0]
+        if i == n -1:
+            if arr[n-1] != arr[n-2]:
+                return arr[n-1]
+            
+    return -1
+
+# TC O(n)
+# SC O(1)
+
+#--------------------------
+
 # Optimal Sol 
 
 def Find_Single_Ele (arr):
