@@ -16,4 +16,28 @@ def Brute_Sqrt(num):
 
 #------------------------------------
 
+# optimal Approach 
+
+def Sqrt_Optimal (num):
+
+    low = 1
+    high = num
+
+    while ( low <= high):
+        mid = ( low + high)//2
+        # Left Half eliminated, ans in right
+        if (mid * mid) <= num:
+            low = mid + 1
+        
+        # Ans in Left Half 
+        else:
+            high = mid - 1
+
+    return high
+
+# TC O(logn)
+# SC O(1)
+
+
 print(Brute_Sqrt(num=28))
+print(Sqrt_Optimal(num=28))
