@@ -39,6 +39,8 @@ def Median_Two_Sorted_Arr(arr1, arr2):
 
 #---------------------------------------------------
 
+# Better Solution - ( Two pointers and index matching )
+
 a = [ 1,3,4,7,10,12]
 b = [ 2,3,6,15]
 print(Median_Two_Sorted_Arr(a,b))
