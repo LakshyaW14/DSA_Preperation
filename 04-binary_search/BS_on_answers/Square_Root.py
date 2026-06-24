@@ -7,7 +7,8 @@ def Brute_Sqrt(num):
     for i in range(num):
         if i*i <= num:
             ans = i
-        else:
+        else: 
+            # Break when i*i > num 
             break
     return ans 
 
