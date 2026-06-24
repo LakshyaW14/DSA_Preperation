@@ -51,7 +51,7 @@ def Nth_Root_Optimal ( num, exp):
             low = mid + 1
     return -1
 
-# TC O( logn)
+# TC O( logm) we search for every possible number from 1 to M to check if it is the Nth root.
 # SC O(1)
 
 #-------------------------
