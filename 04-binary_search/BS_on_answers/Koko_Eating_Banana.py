@@ -22,7 +22,7 @@ def KoKo_Banana_Brute (pile, hrs):
 
         hours = Req_Time( pile, i)
 
-        # if hours fitt within hrs 
+        # if hours fit within hrs 
         if hours <= hrs:
             return i
     return MaxVal
@@ -32,10 +32,34 @@ def KoKo_Banana_Brute (pile, hrs):
 # SC O(1)
 
 #----------------------------------------------------------
+# Optimal Sol 
+# Intuition 
+# Range of banana/hr [ ( 1 2 3 ) not possible ( 4 5 6 7 8 9 ) possible part ]
+# BS -> MIN value 
+def KoKo_banana_optimal (a,h):
+    low = 1
+    high = max(a)
 
+    while ( low <= high ):
+        mid = ( low + high) // 2
 
+        hours = Req_Time(a, mid)
+        # total time is smaller 
+        if hours <= h:
+            high = mid - 1
+        
+        else:
+            low = mid + 1
+
+    return low
+
+# Tc O( n x log(max(a)) ) 
+# SC O(1)
+
+# ----------------------------------
 
 pile = [ 3, 6, 7, 11]
 pile2 = [25, 12, 8, 14, 19] 
 time = 8
 print(KoKo_Banana_Brute(pile, time))
+print(KoKo_banana_optimal(pile, time))
