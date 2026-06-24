@@ -3,12 +3,19 @@
 # Brute Force 
 
 def nth_Root_Brute(num, exp):
-
+    # Loop from 1 to m
     for i in range (num):
-        if pow(i, exp) == num:
+        # compute i^n
+        power = i ** exp
+    
+    # if equals to m, return i 
+        if power == num:
             return i
-        elif pow(i, exp) > num:
-            break
+    
+    # If Exceeds m, break 
+        if power > num:
+            break 
+
     return -1
 
 # TC O( n x logn ) if using the pow function O( n x m) if using loop for pow calc
@@ -26,10 +33,20 @@ def Nth_Root_Optimal ( num, exp):
     while ( low <= high):
         mid = ( low + high) // 2
 
-        if pow(mid, exp) == num:
+        # Store result of mid ^ exp
+        ans =1
+        for _ in range (exp):
+            ans *= mid 
+            if ans > num:
+                break 
+        # If mid^n equals to num 
+        if ans == num:
             return mid
-        elif pow(mid, exp ) > num:
+        
+        # if mid^n greater than num 
+        elif ans > num:
             high = mid - 1
+        # if mid ^n is smaller 
         else:
             low = mid + 1
     return -1
@@ -38,4 +55,4 @@ def Nth_Root_Optimal ( num, exp):
 # SC O(1)
 
 #-------------------------
-print(Nth_Root_Optimal(num=69, exp=4))
+print(Nth_Root_Optimal(num=27, exp=3))
