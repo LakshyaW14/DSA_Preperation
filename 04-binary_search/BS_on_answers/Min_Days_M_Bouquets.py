@@ -38,9 +38,23 @@ def M_Bouquets(days, m, k):
 
 # -----------------------------------------------
 
+# Optimal Solution 
 
+def M_Bouquets_Optimal(days, m , k):
+    low = min(days) # at not possible 
+    high = max (days) # at Possible 
 
+    # Range ( min(a) to max (a))
+    while ( low <= high ):
+        mid = ( low + high )// 2
+
+        if Bouquets(days, mid, k) >= m:
+            high = mid -1
+        else:
+            low = mid + 1
+        return low 
 
 
 Bloom_Days = [7,7,7,7,13,11,12,7]
 print(M_Bouquets(Bloom_Days, m= 2, k= 3))
+print(M_Bouquets_Optimal(Bloom_Days, m= 2, k= 3))
