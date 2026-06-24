@@ -55,6 +55,11 @@ def M_Bouquets_Optimal(days, m , k):
         return low 
 
 
+# TC O( n x log ( min - max +1))
+# SC O(1)
+
+#---------------------------------------
+
 Bloom_Days = [7,7,7,7,13,11,12,7]
 print(M_Bouquets(Bloom_Days, m= 2, k= 3))
 print(M_Bouquets_Optimal(Bloom_Days, m= 2, k= 3))
