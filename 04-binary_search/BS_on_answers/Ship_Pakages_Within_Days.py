@@ -35,9 +35,35 @@ def ship_Pakages(arr, Days):
 # sc O(1)
 
 # ----------------------------
+# Optimal Approach 
 
-weighs1 = [ 1,2,3,4,5,6,7,8,9,10]
+def Ship_pakages_Optimal (arr, Days):
+
+    low = max(arr) # At not possible 
+    high = sum(arr)  # At Possible 
+
+    while ( low <= high):
+        mid = ( low + high) // 2
+        if Days_Reg(arr, mid) <= Days:
+            # The capacity is too large 
+            high = mid - 1
+
+        # the Capacity is too small
+        else:
+            low = mid + 1
+
+    return low 
+
+# TC O(n) x O(log(sum-max+1))
+# Sc O(1)
+
+# --------------------------------------------------------------
+
+
+
+weights1 = [ 1,2,3,4,5,6,7,8,9,10]
 weights2 =  [5, 4, 5, 2, 3, 4, 5, 6]
 d = 5
 
-print(ship_Pakages(weighs1, d))
+print(ship_Pakages(weights1, d))
+print(Ship_pakages_Optimal(weights2, d))
