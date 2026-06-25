@@ -21,6 +21,28 @@ def Find_Smallest_Divisor(arr, Threshold ):
 # SC O(1)
 
 #-------------------------------------
+# Optimal Solution 
+# ans Range ( 1 -> max(Arr))
+
+def Find_Smallest_Divisor_optimal (arr, Threshold):
+    low = 1 # at not possible 
+    high = max(arr)  # at possible 
+
+    while ( low <= high):
+        mid = ( low + high)//2
+        if Func(arr, mid) <= Threshold:
+            high =mid - 1
+        else:
+            low = mid + 1
+        
+    return low 
+
+# TC O( n) x O(log(max(Arr)))
+# SC O(1)
+
+#----------------------------------
+
 
 arr = [ 1,2,5,9]
 print(Find_Smallest_Divisor(arr,Threshold=6))
+print(Find_Smallest_Divisor_optimal(arr,Threshold=6))
