@@ -8,15 +8,19 @@ def Days_Reg(arr, capacity):
     for wt in range ( len(arr)):
         # If Day 1 load is Greater than cap 
         if Load + arr[wt] > capacity:
+            # Move to next day 
             Day +=1
+            # Record the last weight
             Load = arr[wt]
         
-        # if within the req cap 
+        # if within the req cap, add it 
         else:
+            
             Load += arr[wt]
 
     return Day
 
+# Ans Range max(Arr) -> sum(arr)
 def ship_Pakages(arr, Days):
     # Loop for different Capacities 
     low = max(arr)
@@ -27,7 +31,7 @@ def ship_Pakages(arr, Days):
         
     return -1 
 
-# TC O(n) x O(high - low +1)
+# TC O(n) x O(sum(Arr) - max(arr) +1)
 # sc O(1)
 
 # ----------------------------
