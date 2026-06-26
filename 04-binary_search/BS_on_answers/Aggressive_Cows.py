@@ -45,9 +45,40 @@ def Aggressive_Cows (stalls, cows):
 
 # ------------------------------------
 
-    
+# Optimal Approach 
+
+# Answer range low = 1 high = max(arr)
+
+def Aggressive_Cows_Optimal (stalls, cows):
+    stalls.sort()
+
+    # Answer Range 
+    low = 1         # At Possible 
+    high = stalls[-1] # At not possible
+
+    # BS To find the Possible Distance 
+    while ( low <= high):
+        mid = ( low + high)//2
+
+        if CanWePlace(stalls, mid, cows):
+            # look for the max possiblle distance 
+            # So move forward 
+            low = mid + 1
+
+        else:
+            high = mid -1
+
+    return high
+
+
+
+# TC O(nlogn) + O(n) x O(log(max(Arr)))
+# SC O(1)
+
+#----------------------------------
 
 
 arr= [ 0 , 3, 4, 7, 10 , 9]
 
 print(Aggressive_Cows(arr, 4))
+print(Aggressive_Cows_Optimal(arr, 4))
