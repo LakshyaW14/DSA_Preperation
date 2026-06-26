@@ -77,3 +77,51 @@ Output: 9
 Explanation: The minimum ship capacity needed to ship all packages within 5 days is 9.
 
 ---
+
+## 07 -> Kth Missing Positive Number
+
+Problem Statement: You are given a strictly increasing array ‘vec’ and a positive integer 'k'. Find the 'kth' positive integer missing from 'vec'.
+
+Examples
+Example 1:
+Input Format: vec[]={4,7,9,10}, k = 1
+Result: 1
+Explanation: The missing numbers are 1, 2, 3, 5, 6, 8, 11, 12, ……, and so on. Since 'k' is 1, the first missing element is 1.
+
+---
+
+## 08 -> Aggressive Cows : Detailed Solution
+
+Problem Statement: You are given an array 'arr' of size 'n' which denotes the position of stalls. You are also given an integer 'k' which denotes the number of aggressive cows.
+You are given the task of assigning stalls to 'k' cows such that the minimum distance between any two of them is the maximum possible. Find the maximum possible minimum distance.
+
+Examples
+Example 1:
+Input Format:
+ N = 6, k = 4, arr[] = {0,3,4,7,10,9}
+Result:
+ 3
+Explanation:
+ The maximum possible minimum distance between any two cows will be 3 when 4 cows are placed at positions {0, 3, 7, 10}. Here the distances between cows are 3, 4, and 3 respectively. We cannot make the minimum distance greater than 3 in any ways.
+
+ ---
+
+ ## 09 -> Allocate Minimum Number of Pages
+
+
+9
+
+Problem Statement: Given an array ‘arr of integer numbers, ‘ar[i]’ represents the number of pages in the ‘i-th’ book. There are a ‘m’ number of students, and the task is to allocate all the books to the students.
+Allocate books in such a way that:
+
+Each student gets at least one book.
+Each book should be allocated to only one student.
+Book allocation should be in a contiguous manner.
+You have to allocate the book to ‘m’ students such that the maximum number of pages assigned to a student is minimum. If the allocation of books is not possible. return -1
+
+Examples
+Example 1:
+
+Input Format: n = 4, m = 2, arr[] = {12, 34, 67, 90}
+Result: 113
+Explanation: The allocation of books will be 12, 34, 67 | 90. One student will get the first 3 books and the other will get the last one.
