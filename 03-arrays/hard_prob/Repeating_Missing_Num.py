@@ -66,6 +66,40 @@ def Find_Missing_Repeating_Better(arr):
 
 # -----------------------------
 
+# 1st Optimal sol 
+# Using Math 
+
+def Find_Missing_Repeating_Optimal1(arr):
+    n = len(arr)
+
+    # Sum of first N natural number 
+    sn = (n*(n+1)) //2
+    # sum of square n natural number 
+    sn2 = ( (n) *(n+1)*(2*n+1))//6
+
+    s, s2 = 0, 0
+    for num in arr:
+        s += num
+        s += num *num
+
+    # Compute the difference val x - y
+    val1 = s - sn
+
+    # Compute the x^2 - y^2
+    val2 = s2 - sn2
+
+    # Calculate x + y using x^2 - y^2 // x - y
+    val2 = val2 // val1
+    
+    """ Calculate X and Y from X + Y and X - Y
+        X = ((X + Y) + (X - Y)) / 2
+        Y = X - (X - Y) """
+    x= ( val1 + val2)//2
+    y = x - val1
+
+    return [ x, y]
+
 arr = [ 2,3,4,1,1,6]
 print(Find_Missing_Repeating(arr))
 print(Find_Missing_Repeating_Better(arr))
+print(Find_Missing_Repeating_Optimal1(arr))
