@@ -6,11 +6,17 @@ Problem Statement: Given an array of N integers, your task is to find unique tri
 
 Pre-requisite: 2 Sum Problem
 
+
 ## 02 -> 4 Sum | Find Quads that add up to a target value
 
 Problem Statement: Given an array of N integers, your task is to find unique quads that add up to give a target value. In short, you need to return an array of all the unique quadruplets [arr[a], arr[b], arr[c], arr[d]] such that their sum is equal to a given target.
 
 Note: a, b, c and d are also distinct and lies between 0 to n-1 (both inclusive).
+Example 1:
+Input Format:arr[] = [1,0,-1,0,-2,2], target = 0
+Result: [[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]
+Explanation:We have to find unique quadruplets from the array such that the sum of those elements is equal to the target sum given that is 0. The result obtained is such that the sum of the quadruplets yields 0.
+
 
 ## 03 -> Majority Elements -2 (&gt;N/3 times) | Find the elements that appears more than N/3 times in the array
 
