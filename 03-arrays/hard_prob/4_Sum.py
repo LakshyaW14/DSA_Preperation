@@ -71,7 +71,58 @@ def Four_Sum_Better (arr, target):
 
 # --------------------------------
 
+# Optimal Sol 
 
+# using Two Pointers 
+
+def Four_Sum_Optimal(arr, target):
+
+    n = len(arr)
+    arr.sort()
+    ans = []
+
+    # First loop
+    for i in range (n):
+        # skip Duplicates 
+        if i > 0 and (arr[i] == arr[i-1]):
+            continue
+
+            # Second loop 
+        for j in range (i+1, n):
+            # skip duplicates 
+            if j > i+1 and ( arr[j] == arr[j-1]):
+                continue
+
+            k = j +1
+            l = n-1
+
+            # Two pointers
+            while (k < l):
+                total = arr[i] + arr[j] + arr[k] + arr[l]
+                if total == target :
+                    ans.append([arr[i], arr[j], arr[k], arr[l]])
+                    k += 1
+                    l -= 1
+                    
+                # skip Duplicates for k and l
+                    while k < l and ( arr[k] == arr[k+1]):
+                        k += 1
+                    while k < l and ( arr[l] == arr[l-1]):
+                        l -= 1
+                   
+                # 
+                elif total < target :
+                    k += 1
+
+                else:
+                    l -= 1
+    return ans 
+
+
+ 
+
+                
 arr=[1,0,-1,0,-2,2]
 print(Four_Sum(arr,0))
 print(Four_Sum_Better(arr,0))
+print(Four_Sum_Optimal(arr,0))
