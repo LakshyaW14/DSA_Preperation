@@ -118,10 +118,13 @@ def Four_Sum_Optimal(arr, target):
                     l -= 1
     return ans 
 
-
+# TC O(nlogn) + O(n^3)
+# SC O(1) auxillary spaxe 
+#  if including output O(m)
  
 
-                
+# -----------------------------------------
+
 arr=[1,0,-1,0,-2,2]
 print(Four_Sum(arr,0))
 print(Four_Sum_Better(arr,0))
