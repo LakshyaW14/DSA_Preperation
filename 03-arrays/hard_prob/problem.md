@@ -91,3 +91,18 @@ Output: 120
 Explanation: 
 In the given array, 1×2×3×4×5 gives maxim
 
+---
+
+## 08 -> Merge two Sorted Arrays Without Extra Space
+
+Problem Statement: Given two sorted integer arrays nums1 and nums2, merge both the arrays into a single array sorted in non-decreasing order.
+The final sorted array should be stored inside the array nums1 and it should be done in-place.
+Array nums1 has a length of m + n, where the first m elements denote the elements of nums1 and rest are 0s whereas nums2 has a length of n.
+
+Examples
+Input : nums1 = [-5, -2, 4, 5, 0, 0, 0], nums2 = [-3, 1, 8]
+Output : [-5, -3, -2, 1, 4, 5, 8]
+Explanation : The merged array is: [-5, -3, -2, 1, 4, 5, 8], where [-5, -2, 4, 5] are from nums1 and [-3, 1, 8] are from nums2
+
+---
+
