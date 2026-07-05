@@ -42,7 +42,6 @@ def merge_Sorted_Arr(arr1, arr2):
             arr1[i] = temp[i]
         else:
             arr2[i-n] = temp[i]
-    
     return arr1, arr2
 
 # TC merge + copyback O(n+m) + O(n +m) ->> O(n+m)
@@ -50,7 +49,7 @@ def merge_Sorted_Arr(arr1, arr2):
 
 # ----------------------------------------------
 
-# Optimal Sol 1 without extra space 
+# Better without extra space 
 
 """Two Pointer"""
 # The Two array are already sorted 
@@ -90,8 +89,82 @@ def Merge_Sorted_Arr_Better(arr1, arr2):
 # SC O( 1)
 
 # ------------------------------------
+# Three pointer 
+# 
+#------------------------------------
+
+# Optimal sol 
+
+"""Gap Method from Shell Sort """
+# Intuition -> compare and swap until right within the Boundaries 
+# if not Restart -> Reduce Gap 
+# Gap // 2
+
+
+# helper Function to swap elements 
+
+def swapifgreater(arr1, arr2, idx1, idx2):
+    if arr1[idx1] > arr2[idx2]:
+        # Swap 
+        arr1[idx1], arr2[idx2] = arr2[idx2],arr1[idx1]  
+
+
+def Merge_Sorted_Arr_Optimal(arr1, arr2):
+    n = len(arr1)
+    m = len(arr2)
+    length = n + m
+
+    gap = (length//2) + (length % 2)
+
+    while ( gap > 0):
+        left = 0 
+        right = left + gap 
+
+        while ( right < length):
+
+            # left pointer in arr1 and right  pointer in Arr2
+            if ( left < n) and ( right >= n):
+                swapifgreater( arr1 , arr2, left, right-n)
+
+            # both pointer in arr2
+            elif ( left >= n):
+                swapifgreater( arr2, arr2, left-n , right-n)
+
+            # Both pointer in arr1 
+            else:   
+                swapifgreater ( arr1, arr1, left , right)
+            
+            left += 1 
+            right += 1
+
+        # if gap equals to 1 
+        if gap == 1:
+            break 
+        gap = ( gap // 2) + ( gap % 2)
+
+    return arr1, arr2
+
+# Time Comp -> Outer Loop O(logn) Inner Loop O(N) N = n +m
+# O(n+m)log(n+m)
+
+# Space complexity O(1)
+
+
+
+
+
 
 num1 = [1,3,5,7]
 num2 = [0,2,6,8,9]
-print(merge_Sorted_Arr(num1, num2))
-print(Merge_Sorted_Arr_Better(num1, num2))
+
+arr1 = [-5, -2, 4, 5, 0, 0, 0] # For this Input the swap+sort algo fails here Three Pointer Works 
+arr2 = [-3, 1, 8]
+
+# print(merge_Sorted_Arr(num1, num2))
+# print(Merge_Sorted_Arr_Better(num1, num2))
+# print(Merge_Sorted_Arr_Optimal (num1, num2))
+
+
+print(merge_Sorted_Arr(arr1, arr2))
+print(Merge_Sorted_Arr_Better(arr1, arr2))
+print(Merge_Sorted_Arr_Optimal (arr1, arr2))
