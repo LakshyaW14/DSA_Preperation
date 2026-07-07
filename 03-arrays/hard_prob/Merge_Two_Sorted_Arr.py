@@ -90,7 +90,41 @@ def Merge_Sorted_Arr_Better(arr1, arr2):
 
 # ------------------------------------
 # Three pointer 
-# 
+# arr1 = [ 1, 3, 5, 0, 0, 0] where placeholder values is used 
+# arr2 = [ 2, 4, 6 ] 
+
+def Merge_sorted_arr_Optimal2(arr1, arr2):
+    m = len(arr2)
+    n= len(arr1) - m
+
+    # n = length of valid elements only 
+    # Intialize three pointers 
+    i = n -1
+    j = m - 1
+    k =  m + n -1
+    
+    # merge From back to avoid overwriting 
+    while ( i>= 0 ) and  ( j >= 0):
+
+        # if a1 ele is greater than a2 ele, place at a1[k] place 
+        if arr1[i] > arr2[j]:
+            arr1[k] = arr1[i]
+            i -= 1
+
+        else:
+            arr1[k] = arr2[j]
+            j -= 1
+        k -= 1
+
+    # if element remain in arr2 
+    while ( j >= 0):
+        arr1[k] = arr2[j]
+        j -= 1
+        k -= 1
+    # No need to copy the leftover ele of arr1 , already sorted
+
+    return arr1
+
 #------------------------------------
 
 # Optimal sol 
@@ -165,6 +199,8 @@ arr2 = [-3, 1, 8]
 # print(Merge_Sorted_Arr_Optimal (num1, num2))
 
 
-print(merge_Sorted_Arr(arr1, arr2))
-print(Merge_Sorted_Arr_Better(arr1, arr2))
-print(Merge_Sorted_Arr_Optimal (arr1, arr2))
+# print(merge_Sorted_Arr(arr1, arr2))
+# print(Merge_Sorted_Arr_Better(arr1, arr2))
+# print(Merge_Sorted_Arr_Optimal (arr1, arr2))
+
+print(Merge_sorted_arr_Optimal2(arr1, arr2))
