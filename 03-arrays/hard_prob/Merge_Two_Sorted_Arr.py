@@ -94,8 +94,8 @@ def Merge_Sorted_Arr_Better(arr1, arr2):
 # arr2 = [ 2, 4, 6 ] 
 
 def Merge_sorted_arr_Optimal2(arr1, arr2):
-    m = len(arr2)
-    n= len(arr1) - m
+    m = len(arr2)   # 3
+    n= len(arr1) - m    # 4
 
     # n = length of valid elements only 
     # Intialize three pointers 
@@ -124,6 +124,10 @@ def Merge_sorted_arr_Optimal2(arr1, arr2):
     # No need to copy the leftover ele of arr1 , already sorted
 
     return arr1
+
+
+#  TC O(n + m) we traverse both the arr once 
+# SC O(1)
 
 #------------------------------------
 
@@ -183,10 +187,7 @@ def Merge_Sorted_Arr_Optimal(arr1, arr2):
 
 # Space complexity O(1)
 
-
-
-
-
+# ---------------------------------------
 
 num1 = [1,3,5,7]
 num2 = [0,2,6,8,9]

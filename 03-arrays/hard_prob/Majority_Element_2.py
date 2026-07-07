@@ -121,7 +121,7 @@ def Majority_Element_two_Optimal (arr):
 
     # Sort if neccessary
     # ans.sort()
-    
+
     return ans
 
 
