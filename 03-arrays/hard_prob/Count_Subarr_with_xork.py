@@ -46,7 +46,47 @@ def Count_Subarr_Xor_Sum_Better (arr, k):
 #--------------------------------
 
 
+# Optimal Sol 
+
+""" Prefix Sum """
+
+# Intuition hash map -> ( key , value ) as ( pre_sum , count )
+
+def Count_Subarr_Xor_Sum_Optimal (arr, k):
+    # Variable to store the Prefix sum 
+    pre_xor = 0
+
+    # hash map
+    mp = {0:1}
+
+    # Count Variable 
+    count = 0
+
+    # Traversing the arr
+    for num in arr :
+
+        # Add xor of elements in prefix sum 
+        pre_xor ^= num 
+
+        # value to be excluded 
+        rem = pre_xor ^ k
+
+        # Condition 
+        if rem in mp:
+            # Increment the count 
+            count += mp[rem]
+
+        # Add the current prefix xor in mp , not in mp add 0
+        mp[pre_xor] = mp.get(pre_xor, 0) + 1
+
+    return count 
+         
+# TC O(n) traversing once
+# SC O(n) if all elements are unique, we end up adding all ele to hash_map
+# --------------------------------------------
+
 nums = [4, 2, 2,6 ,4 ]
 
 print(Count_Subarr_Xor_Sum_Brute(nums, k=6))
 print(Count_Subarr_Xor_Sum_Better(nums, k=6))
+print(Count_Subarr_Xor_Sum_Optimal(nums, k=6))
