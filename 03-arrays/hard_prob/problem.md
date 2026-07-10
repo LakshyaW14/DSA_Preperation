@@ -117,4 +117,32 @@ Explanation : Since intervals [1,3] and [2,6] are overlapping we can merge them 
 
 ---
 
-## 10 -> 
+## 10 -> Find the repeating and missing numbers
+
+Problem Statement: Given an integer array nums of size n containing values from [1, n] and each value appears exactly once in the array, except for A, which appears twice and B which is missing.
+Return the values A and B, as an array of size 2, where A appears in the 0-th index and B in the 1st index.
+
+Note: You are not allowed to modify the original array.
+
+Examples
+Example 1:
+Input:
+ nums = [3, 5, 4, 1, 1]  
+Output:
+ [1, 2]  
+Explanation:
+ 1 appears twice in the array, and 2 is missing from the array. So the output is [1, 2].
+
+---
+
+## 11 -> Count the number of subarrays with given xor K
+
+
+12
+
+Problem Statement: Given an array of integers A and an integer B. Find the total number of subarrays having bitwise XOR of all elements equal to k.
+
+Examples
+Input: A = [4, 2, 2, 6, 4] , k = 6
+Output: 4
+Explanation: The subarrays having XOR of their elements as 6 are  [4, 2], [4, 2, 2, 6, 4], [2, 2, 6]
