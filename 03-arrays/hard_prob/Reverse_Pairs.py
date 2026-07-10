@@ -113,4 +113,9 @@ if __name__ == "__main__":
 # SC O(n) temp array used during merging 
 # the original 
 
-# 
+# Important interview pov 
+# the original arr get modified 
+# before algo -> [ 1, 3, 2, 3, 1]
+# after algo -> [ 1, 1, 2, 3, 3]
+
+# use arr.copy() if don't want to modify the arr 
