@@ -41,7 +41,7 @@ Problem Statement: Given an array of numbers, you need to return the count of re
 Examples
 Example 1:
 Input:
- N = 5, array[] = {1,3,2,3,1)
+ N = 5, array[] = (1,3,2,3,1)
 Output
 : 2 
 Explanation:
@@ -106,3 +106,15 @@ Explanation : The merged array is: [-5, -3, -2, 1, 4, 5, 8], where [-5, -2, 4, 5
 
 ---
 
+## 09 -> Merge Overlapping Sub-intervals
+
+Problem Statement: Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals and return an array of the non-overlapping intervals that cover all the intervals in the input.
+
+Examples
+Input : intervals=[[1,3],[2,6],[8,10],[15,18]]
+Output : [[1,6],[8,10],[15,18]]
+Explanation : Since intervals [1,3] and [2,6] are overlapping we can merge them to form [1,6] intervals
+
+---
+
+## 10 -> 
