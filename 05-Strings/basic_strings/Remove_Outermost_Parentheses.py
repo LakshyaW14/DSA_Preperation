@@ -31,6 +31,12 @@ def Remove_Outermost_Parentheses(str):
            
     return result
 
+
+# TC O(n)
+# Sc O(1) using only few variables 
+# 
+# ---------------------------------------
+ 
 string = "()(()())(())"
 s = "((()))"
 print(Remove_Outermost_Parentheses(string))
