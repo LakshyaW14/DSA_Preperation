@@ -72,8 +72,11 @@ def Merge_Overlapping_Subinterval_Optimal(arr):
 
     return ans 
 
-# TC O(n)
-# SC O(1)
+# TC O(nlogn) sorting + single traversal O(n)
+
+# SC O(1) the extra auxiliary space ,excluding the ans list 
+# else O(n) for ans list
+#  
 # ----------------------------------------
 
 
