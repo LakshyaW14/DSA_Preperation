@@ -2,7 +2,7 @@
 
 # Brute Force Approach 
 
-def Reverse_words_string_Brute(s):
+def Reverse_Words_String_Brute(s):
     # list to store the result 
     words = []
     
@@ -37,5 +37,21 @@ def Reverse_words_string_Brute(s):
 # SC O(n) ans arr
 
 # ----------------------------------------
+# Optimal Sol 
+
+def Reverse_Words_String_Brute(s):
+    n = len(s)
+    i = n -1 
+    words = ""
+    while ( i ):
+    
+        pass 
+
+s = "hello world lakshya"
+
+print(s[0])
+
+
+
 s = "amazing coding skills"
-print(Reverse_words_string(s))
+# print(Reverse_Words_String_Brute(s))
