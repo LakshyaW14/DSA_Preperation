@@ -11,33 +11,42 @@ def Merge_Overlapping_Subinterval(arr):
 
     # iterating over the arr
     for i in range (len(arr)):  # 0 -> n
+        
+        # After merging intervals ( overlapping intervals visited by j pointer ),
+        #  you must somehow skip all the intervals that were merged. i not nedd to visit the merged intervals 
+
+        # Skip if this interval is already merged 
+        if ans and arr[i][1] <= ans [-1][1]:
+            continue
 
         start = arr[i][0]
         end = arr[i][1]
+
         # second loop 
+        # Check all following Interval 
         for j in range ( i+1, len(arr)):
 
             # overlapping condition check 
             if arr[j][0] <= end:
                 # Update the end with, max possible element 
                 end = max (end, arr[j][1])
-            if [ start, end ] in ans :
-                continue
+           
             else:
                 break 
-        ans.append((start, end))
+
+        ans.append([start, end])
          
     return ans
     # intialize the start and end variable -> ( start, end )
 
-# TC O(n^2)
-# SC O(1)
+# TC  O(nlogn) + O(N^2)nearly  
+# SC O(N)
 
 # -------------------------------
 # Optimal sol 
 
-def Merge_Overlapping_Subinterval(arr):
-    ...
+def Merge_Overlapping_Subinterval_Optimal(arr):
+    
 
 
 
