@@ -47,13 +47,36 @@ def Merge_Overlapping_Subinterval(arr):
 
 def Merge_Overlapping_Subinterval_Optimal(arr):
     
+    # Sort the arr
+    arr.sort()
 
+    ans =[]
 
+    # Current_start = arr[i][0]
+    # Last_end = ans [-1][1]
+
+    # iterating
+    for i in range (len(arr)) :
+
+        # First Interval
+        if not ans :
+            ans.append(arr[i])
+
+        # Curent > last there is no overlap, so append 
+        if ans and arr[i][0] > ans[-1][1] :
+            ans .append(arr[i])
+
+        # Overlap
+        else:
+            ans [-1][1] = max(ans[-1][1] , arr[i][1])
+
+    return ans 
 
 # TC O(n)
 # SC O(1)
-
+# ----------------------------------------
 
 
 intervals=[[1,3],[2,4],[2,6],[8,10],[15,18]]
 print(Merge_Overlapping_Subinterval(intervals))
+print(Merge_Overlapping_Subinterval_Optimal(intervals))
