@@ -1,4 +1,5 @@
-
+# Intuition -> the min element index is the break point, /
+# from there the arr is rotated
 
 def Count_Rotation (nums):
     low, high = 0, len(nums)-1
@@ -19,6 +20,7 @@ def Count_Rotation (nums):
             if nums[low] < mini:
                 mini = nums[low]
                 ans_idx = low
+                
         # Right half 
         else:
             if nums[mid] < mini:
@@ -26,6 +28,10 @@ def Count_Rotation (nums):
                 ans_idx = mid
 
     return ans_idx
+
+# TC O(logn)
+# Sc O(1) constant space for variables 
+# -----------------------------------------
 
 arr= [4,5,6,7,0,1,2,3]
 print(Count_Rotation(arr))
