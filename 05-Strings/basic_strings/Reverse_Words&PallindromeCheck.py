@@ -1,8 +1,12 @@
 # Reverse words in string 
 
 # Brute Force Approach 
+# String are immutable in py
 
-def Reverse_Words_String_Brute(s):
+# Intuition -> Extract word -> reverse
+# list -> join 
+
+def Reverse_Words_String_Better(s):
     # list to store the result 
     words = []
     
@@ -37,19 +41,60 @@ def Reverse_Words_String_Brute(s):
 # SC O(n) ans arr
 
 # ----------------------------------------
-# Optimal Sol 
+
+# Intuition  -> Move from right to left, build the output directly 
 
 def Reverse_Words_String_Brute(s):
     n = len(s)
-    i = n -1 
-    words = ""
-    while ( i ):
+
+    # result String
+    Res = ""
+
+    # Intialize the pointer, starting from end 
+    i = n -1
     
-        pass 
+    # Each char is visited at most twice
+    # 1. once while skipping spaces 
+    # 2. once while scanning a word 
+
+    while i >= 0: 
+        # skipping spaces 
+        while i >= 0 and s[i] == " ":
+            # Skip Spaces 
+            i -= 1
+
+        # If i goes out of bounds 
+        if i < 0 :
+            break 
+
+        # Mark end of the word
+        end = i
+
+        # move left until space or start 
+        while i>= 0 and s[i] != " ":
+            i -= 1
+
+        # Extract the word 
+        word = s[ i + 1 : end +1]
+
+        # Add space if result is not empty 
+        if Res :
+            Res += " "
+
+        # append word 
+        Res += word
+
+    return Res
+
+
+# TC O(n)
+# SC (n)
+
+# ----------------------------
+
 
 s = "hello world lakshya"
 
-print(s[0])
 
 
 
