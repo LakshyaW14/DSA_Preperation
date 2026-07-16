@@ -92,11 +92,62 @@ def Reverse_Words_String_Brute(s):
 
 # ----------------------------
 
+# Optimal 2 
+# Classic Interview Approaach 
 
-s = "hello world lakshya"
+# Intuition -> Reverse the Whole String, then reverse the word individually 
+
+def Reverse_Words_Optimal (s):
+    # Remove Extra spaces
+    words = s.split()
+    chars = list(" ".join(words))
+
+    # Reverse  the whole string 
+    left, right = 0, len(chars)-1
+
+    while left < right:
+        chars[left], chars[right] = chars[right], chars[left]
+        left += 1
+        right -= 1
+
+    # Helper function 
+    def Reverse(arr, left, right):
+        while ( left < right):
+            arr[left], arr[right]= arr[right], arr[left ]
+            left += 1
+            rigth -= 1
+
+    # Reverse each Word 
+    n = len(chars)
+    start = 0
+
+    for end in range (n+1):
+        if end == n or chars[end] == " ":
+            Reverse(chars, start, end-1)
+            start = end + 1
+
+    return "" .join(chars)
+
+# TC On(n)+(n)+(n) -> (N)
+
+# Sc O(n ) in py because string are immutable and we create a char list 
+# O(1) in c ++ or java if char stored in mutable arr 
+
+#---------------------------------------------
+
+#Why interviewers like this approach
+
+# It demonstrates mastery of string manipulation and the reverse-then-fix pattern, which also appears in problems like:
+
+# Rotate Array
+# Reverse Words in a String
+# Reverse Characters in Each Word
+# Left/Right String Rotation
 
 
+#----------------------------
 
+s1 = "hello world lakshya"
 
 s = "amazing coding skills"
-# print(Reverse_Words_String_Brute(s))
+print(Reverse_Words_String_Brute(s))
