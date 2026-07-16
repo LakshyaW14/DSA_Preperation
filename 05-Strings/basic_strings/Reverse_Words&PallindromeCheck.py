@@ -115,7 +115,7 @@ def Reverse_Words_Optimal (s):
         while ( left < right):
             arr[left], arr[right]= arr[right], arr[left ]
             left += 1
-            rigth -= 1
+            right -= 1
 
     # Reverse each Word 
     n = len(chars)
@@ -151,3 +151,5 @@ s1 = "hello world lakshya"
 
 s = "amazing coding skills"
 print(Reverse_Words_String_Brute(s))
+print(Reverse_Words_Optimal(s))
+print(Reverse_Words_String_Better(s))
