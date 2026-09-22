@@ -1,1 +1,3 @@
-pass
+def Hashing_String():
+    
+    pass
